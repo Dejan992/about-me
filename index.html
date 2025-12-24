@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dejan Rajkovic | Senior MLOps Engineer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- SVG Icon Sprite (outline) -->
+    <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg">
+        <symbol id="icon-robot" viewBox="0 0 24 24">
+            <path d="M12 3v3"/>
+            <path d="M10 6h4"/>
+            <rect x="5" y="9" width="14" height="10" rx="3"/>
+            <path d="M8 13h.01"/>
+            <path d="M16 13h.01"/>
+            <path d="M9 16h6"/>
+        </symbol>
+        <symbol id="icon-cloud" viewBox="0 0 24 24">
+            <path d="M7 18a4 4 0 0 1 0-8 5 5 0 0 1 9.7-1.7A4 4 0 0 1 17 18H7z"/>
+        </symbol>
+        <symbol id="icon-boxes" viewBox="0 0 24 24">
+            <path d="M21 8l-9-5-9 5 9 5 9-5z"/>
+            <path d="M3 8v8l9 5 9-5V8"/>
+            <path d="M12 13v8"/>
+        </symbol>
+        <symbol id="icon-wrench" viewBox="0 0 24 24">
+            <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4l-6.2 6.2a2 2 0 0 0 2.8 2.8l6.2-6.2a4 4 0 0 0 5.4-5.4l-2.3 2.3-2.6-2.6 2.1-2.3z"/>
+        </symbol>
+        <symbol id="icon-code" viewBox="0 0 24 24">
+            <path d="M8 9l-3 3 3 3"/>
+            <path d="M16 9l3 3-3 3"/>
+            <path d="M14 7l-4 10"/>
+        </symbol>
+        <symbol id="icon-shield" viewBox="0 0 24 24">
+            <path d="M12 2l8 4v6c0 5-3.5 9.4-8 10-4.5-.6-8-5-8-10V6l8-4z"/>
+            <path d="M9 12l2 2 4-4"/>
+        </symbol>
+        <symbol id="icon-grad-cap" viewBox="0 0 24 24">
+            <path d="M22 10L12 5 2 10l10 5 10-5z"/>
+            <path d="M6 12v5c0 1 3 3 6 3s6-2 6-3v-5"/>
+        </symbol>
+        <symbol id="icon-trophy" viewBox="0 0 24 24">
+            <path d="M8 4h8v3a4 4 0 0 1-8 0V4z"/>
+            <path d="M6 7H4a2 2 0 0 0 2 2"/>
+            <path d="M18 7h2a2 2 0 0 1-2 2"/>
+            <path d="M12 11v4"/>
+            <path d="M9 19h6"/>
+            <path d="M10 15h4"/>
+        </symbol>
+        <symbol id="icon-medal" viewBox="0 0 24 24">
+            <path d="M8 3h8l-2 6H10L8 3z"/>
+            <circle cx="12" cy="16" r="5"/>
+            <path d="M12 13l1 2 2 .2-1.5 1.3.5 2-2-1.2-2 1.2.5-2L9 15.2l2-.2 1-2z"/>
+        </symbol>
+        <symbol id="icon-mail" viewBox="0 0 24 24">
+            <path d="M4 6h16v12H4z"/>
+            <path d="M4 7l8 6 8-6"/>
+        </symbol>
+        <symbol id="icon-microsoft" viewBox="0 0 24 24">
+            <rect x="3" y="3" width="8" height="8" rx="1"/>
+            <rect x="13" y="3" width="8" height="8" rx="1"/>
+            <rect x="3" y="13" width="8" height="8" rx="1"/>
+            <rect x="13" y="13" width="8" height="8" rx="1"/>
+        </symbol>
+        <symbol id="icon-linkedin" viewBox="0 0 16 16">
+            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+        </symbol>
+        <symbol id="icon-github" viewBox="0 0 24 24">
+            <path d="M9 19c-5 1.5-5-2.5-7-3"/>
+            <path d="M16 22v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+        </symbol>
+    </svg>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">DR<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="hero-greeting">Hello, I'm</p>
+                <h1 class="hero-name">Dejan Rajkovic</h1>
+                <h2 class="hero-title">
+                    <span class="typing-text"></span><span class="cursor">|</span>
+                </h2>
+                <p class="hero-description">
+                    Building intelligent ML infrastructure and production-grade AI systems that scale. 
+                    Passionate about automation, MLOps best practices, and bridging the gap between data science and operations.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="code-window">
+                    <div class="window-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <pre class="code-content"><code><span class="keyword">const</span> <span class="variable">engineer</span> = {
+  <span class="property">name</span>: <span class="string">"Dejan Rajkovic"</span>,
+  <span class="property">role</span>: <span class="string">"Senior MLOps Engineer"</span>,
+  <span class="property">skills</span>: [
+    <span class="string">"AWS"</span>, <span class="string">"Kubernetes"</span>,
+    <span class="string">"ML Pipelines"</span>, <span class="string">"Python"</span>
+  ],
+  <span class="property">passion</span>: <span class="string">"Productionizing AI"</span>
+};</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-frame">
+                        <div class="placeholder-avatar">
+                            <span>DR</span>
+                        </div>
+                    </div>
+                    <div class="experience-badge">
+                        <span class="years">8+</span>
+                        <span class="text">Years of Experience</span>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3>Building AI-Powered Infrastructure</h3>
+                    <p>
+                        I'm a Senior MLOps Engineer with a passion for building 
+                        automated, scalable, and secure machine learning systems. My expertise spans across AWS, 
+                        Kubernetes, ML pipelines, and infrastructure as code.
+                    </p>
+                    <p>
+                        I specialize in bridging the gap between data science and operations, ensuring models 
+                        move seamlessly from experimentation to production. From designing AI gateways to 
+                        implementing robust CI/CD for ML, I focus on making AI systems reliable and maintainable.
+                    </p>
+                    <p>
+                        When I'm not architecting ML infrastructure, you'll find me exploring the Arizona 
+                        outdoors with my wife, two kids, and our two dogs. Whether it's biking to the lake 
+                        to watch the ducks or discovering new hiking trails together.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="category-icon" aria-hidden="true">
+                        <svg class="icon icon-accent"><use href="#icon-robot"/></svg>
+                    </div>
+                    <h3>MLOps & AI</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">MLflow</span>
+                        <span class="skill-tag">Kubeflow</span>
+                        <span class="skill-tag">SageMaker</span>
+                        <span class="skill-tag">Feature Stores</span>
+                        <span class="skill-tag">Model Serving</span>
+                        <span class="skill-tag">LLMOps</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="category-icon" aria-hidden="true">
+                        <svg class="icon icon-accent"><use href="#icon-cloud"/></svg>
+                    </div>
+                    <h3>Cloud Platforms</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">EC2</span>
+                        <span class="skill-tag">Lambda</span>
+                        <span class="skill-tag">S3</span>
+                        <span class="skill-tag">CloudFormation</span>
+                        <span class="skill-tag">EKS</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="category-icon" aria-hidden="true">
+                        <svg class="icon icon-accent"><use href="#icon-boxes"/></svg>
+                    </div>
+                    <h3>Containers & Orchestration</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">Helm</span>
+                        <span class="skill-tag">ECS</span>
+                        <span class="skill-tag">ArgoCD</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="category-icon" aria-hidden="true">
+                        <svg class="icon icon-accent"><use href="#icon-wrench"/></svg>
+                    </div>
+                    <h3>Infrastructure as Code</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Terraform</span>
+                        <span class="skill-tag">CloudFormation</span>
+                        <span class="skill-tag">CDK</span>
+                        <span class="skill-tag">Ansible</span>
+                        <span class="skill-tag">Pulumi</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="category-icon" aria-hidden="true">
+                        <svg class="icon icon-accent"><use href="#icon-code"/></svg>
+                    </div>
+                    <h3>Programming</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Bash</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">Go</span>
+                        <span class="skill-tag">SQL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="category-icon" aria-hidden="true">
+                        <svg class="icon icon-accent"><use href="#icon-shield"/></svg>
+                    </div>
+                    <h3>Security & Observability</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">DevSecOps</span>
+                        <span class="skill-tag">Snyk</span>
+                        <span class="skill-tag">Datadog</span>
+                        <span class="skill-tag">Prometheus</span>
+                        <span class="skill-tag">Grafana</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications & Awards Section -->
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications & Awards</h2>
+            <div class="skills-grid">
+                <!-- Individual Cert Cards -->
+                <div class="skill-category">
+                    <div class="category-icon" aria-hidden="true">
+                        <svg class="icon icon-accent"><use href="#icon-shield"/></svg>
+                    </div>
+                    <h3>AWS Certified Security - Specialty</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Amazon Web Services</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="category-icon" aria-hidden="true">
+                        <svg class="icon icon-accent"><use href="#icon-microsoft"/></svg>
+                    </div>
+                    <h3>Microsoft AI Practitioner</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Microsoft</span>
+                    </div>
+                </div>
+                <!-- Individual Award Card -->
+                <div class="skill-category">
+                    <div class="category-icon" aria-hidden="true">
+                        <svg class="icon icon-accent"><use href="#icon-trophy"/></svg>
+                    </div>
+                    <h3>DevSecOps Leadership Award</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Snyk • 2022</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-list">
+                <div class="project-item">
+                    <span class="project-icon" aria-hidden="true">
+                        <svg class="icon icon-accent"><use href="#icon-robot"/></svg>
+                    </span>
+                    <div class="project-info">
+                        <h3>AI Gateway</h3>
+                        <p>Unified API gateway for managing and routing requests to multiple LLM providers with rate limiting, caching, and observability.</p>
+                        <div class="project-tech">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">FastAPI</span>
+                            <span class="skill-tag">Redis</span>
+                            <span class="skill-tag">Kubernetes</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <span class="project-icon" aria-hidden="true">
+                        <svg class="icon icon-accent"><use href="#icon-boxes"/></svg>
+                    </span>
+                    <div class="project-info">
+                        <h3>ML Pipeline Orchestration</h3>
+                        <p>End-to-end ML pipeline infrastructure with automated training, validation, and deployment workflows.</p>
+                        <div class="project-tech">
+                            <span class="skill-tag">Kubeflow</span>
+                            <span class="skill-tag">MLflow</span>
+                            <span class="skill-tag">SageMaker</span>
+                            <span class="skill-tag">Airflow</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <span class="project-icon" aria-hidden="true">
+                        <svg class="icon icon-accent"><use href="#icon-cloud"/></svg>
+                    </span>
+                    <div class="project-info">
+                        <h3>AWS Account Vending Machine</h3>
+                        <p>Automated AWS account provisioning system with security controls, IAM policies, and networking configurations.</p>
+                        <div class="project-tech">
+                            <span class="skill-tag">CloudFormation</span>
+                            <span class="skill-tag">Lambda</span>
+                            <span class="skill-tag">Step Functions</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <span class="project-icon" aria-hidden="true">
+                        <svg class="icon icon-accent"><use href="#icon-boxes"/></svg>
+                    </span>
+                    <div class="project-info">
+                        <h3>EKS Cluster Management</h3>
+                        <p>Production-grade Kubernetes clusters with GitOps workflows, automated scaling, and comprehensive monitoring.</p>
+                        <div class="project-tech">
+                            <span class="skill-tag">Kubernetes</span>
+                            <span class="skill-tag">Helm</span>
+                            <span class="skill-tag">ArgoCD</span>
+                            <span class="skill-tag">Terraform</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <span class="project-icon" aria-hidden="true">
+                        <svg class="icon icon-accent"><use href="#icon-code"/></svg>
+                    </span>
+                    <div class="project-info">
+                        <h3>Model Monitoring Platform</h3>
+                        <p>Real-time ML model performance monitoring with drift detection, alerting, and automated retraining triggers.</p>
+                        <div class="project-tech">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Evidently</span>
+                            <span class="skill-tag">Grafana</span>
+                            <span class="skill-tag">Prometheus</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <span class="project-icon" aria-hidden="true">
+                        <svg class="icon icon-accent"><use href="#icon-wrench"/></svg>
+                    </span>
+                    <div class="project-info">
+                        <h3>AWS Cost Analyzer</h3>
+                        <p>GitHub Action for automated AWS cost analysis and reporting, helping teams track and optimize cloud spending.</p>
+                        <div class="project-tech">
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">GitHub Actions</span>
+                            <span class="skill-tag">Cost Explorer API</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <span class="project-icon" aria-hidden="true">
+                        <svg class="icon icon-accent"><use href="#icon-shield"/></svg>
+                    </span>
+                    <div class="project-info">
+                        <h3>Platform Security Infrastructure</h3>
+                        <p>Multi-account AWS organization with SCPs, security controls, and compliance automation for enterprise environments.</p>
+                        <div class="project-tech">
+                            <span class="skill-tag">AWS Organizations</span>
+                            <span class="skill-tag">SCPs</span>
+                            <span class="skill-tag">IAM</span>
+                            <span class="skill-tag">Security Hub</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's work together</h3>
+                    <p>
+                        I'm always interested in hearing about new opportunities, 
+                        challenging MLOps projects, or just having a chat about 
+                        AI infrastructure and cloud technologies.
+                    </p>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <span class="contact-icon" aria-hidden="true">
+                                <svg class="icon icon-primary"><use href="#icon-mail"/></svg>
+                            </span>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:dan.rajkovic@icloud.com">dan.rajkovic@icloud.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <span class="contact-icon" aria-hidden="true">
+                                <svg class="icon icon-filled icon-primary"><use href="#icon-linkedin"/></svg>
+                            </span>
+                            <div>
+                                <h4>LinkedIn</h4>
+                                <a href="https://linkedin.com/in/dejan-rajkovic" target="_blank">/in/dejan-rajkovic</a>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <span class="contact-icon" aria-hidden="true">
+                                <svg class="icon icon-primary"><use href="#icon-github"/></svg>
+                            </span>
+                            <div>
+                                <h4>GitHub</h4>
+                                <a href="https://github.com/Dejan992" target="_blank">@Dejan992</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">DR<span>.</span></div>
+                <p class="footer-text">Building the future of AI infrastructure, one pipeline at a time.</p>
+                <div class="social-links">
+                    <a href="https://github.com/Dejan992" target="_blank" aria-label="GitHub">
+                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-github"/></svg>
+                    </a>
+                    <a href="https://linkedin.com/in/dejan-rajkovic" target="_blank" aria-label="LinkedIn">
+                        <svg class="icon icon-filled" viewBox="0 0 16 16" aria-hidden="true"><use href="#icon-linkedin"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2024</span> Dejan Rajkovic. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

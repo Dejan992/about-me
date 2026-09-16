@@ -19,7 +19,7 @@ Relative links are used throughout so the site works both at `/about-me/` and on
 ## Pages
 
 - `index.html`: home (Work, Projects, Speaking, Contact)
-- `projects/`: AI Gateway, Agent Memory, Platform SDK, Eval Platform, Agent Orchestrator, plus a side-projects slot
+- `projects/`: AI infrastructure, Agent Memory, Agent Observability, Platform SDK (contributions), plus a side-projects slot
 - `writing/`: notes index and stub posts
 - `speaking/`: talk abstracts and engagements (empty until real dates exist)
 - `404.html`: GitHub Pages not-found page

@@ -53,9 +53,9 @@
                     <time datetime="2026-09-16">16 Sep 2026</time>
                     <span class="stub-label">Stub</span>
                 </p>
-                <p>If every IDE and app speaks tools and model APIs on its own, you get duplicated auth, duplicated protocol handling, and a deploy whenever routing policy changes. A gateway is the boring fix: one URL, MCP sessions for tools, OAuth 2.1 at the edge, tenant config in one place.</p>
-                <p>Hot reload matters because tenant settings change more often than code. The gateway I built reloads config without bouncing the process. A React admin UI, a service registry, and a skills registry make that operable. Voice transcription is a sibling microservice on the same platform, not a special case inside each app.</p>
-                <p>This stub stops at the design. The <a class="text-link" href="../../projects/ai-gateway/">project page</a> has the stack (FastAPI, MCP, DynamoDB, Redis, AWS CDK). I will add failure modes and routing rules here later. No traffic charts until I have numbers I am willing to publish.</p>
+                <p>If every IDE and app speaks tools and model APIs on its own, you get duplicated auth, duplicated protocol handling, and a deploy whenever routing policy changes. A gateway is the boring fix: one URL, MCP sessions for tools, tenant config in one place.</p>
+                <p>The part I own is making that gateway a production system. Hot reload matters because tenant settings change more often than code. CDK, ECS, and Datadog are how it stays up and visible. Product surfaces on the same stack are team-owned.</p>
+                <p>This stub stops at the design. The <a class="text-link" href="../../projects/ai-gateway/">project page</a> has the infra stack. I will add failure modes here later. No traffic charts until I have numbers I am willing to publish.</p>
                 <p class="article-links">
                     <a class="text-link" href="../">All notes</a>
                     <a class="text-link" href="../agent-memory-token-budgets/">Agent memory under token budgets</a>

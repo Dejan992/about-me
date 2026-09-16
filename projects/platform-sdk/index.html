@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Platform SDK | Dejan Rajkovic</title>
-    <meta name="description" content="Python SDK for AI apps with unified auth, tool orchestration, and a composable agent builder with safety guardrails.">
+    <meta name="description" content="Contributions to a Python SDK for AI apps: memory hydration, tracing, and shared nodes so teams do not assemble a stack per product.">
     <link rel="canonical" href="https://dejan992.github.io/about-me/projects/platform-sdk/">
     <meta property="og:title" content="AI Platform SDK | Dejan Rajkovic">
-    <meta property="og:description" content="Python SDK for AI apps with unified auth, tool orchestration, and a composable agent builder with safety guardrails.">
+    <meta property="og:description" content="Contributions to a Python SDK for AI apps: memory hydration, tracing, and shared nodes so teams do not assemble a stack per product.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://dejan992.github.io/about-me/projects/platform-sdk/">
     <meta name="theme-color" content="#0c110d">
@@ -37,7 +37,7 @@
                 <a href="../../speaking/">Speaking</a>
                 <a href="../../#contact">Contact</a>
             </nav>
-            <p class="rail-copy">Auth, tools, memory, and guardrails as nodes you compose, not a new stack in every repo.</p>
+            <p class="rail-copy">I contribute to the SDK. Memory and traces are the slices I care about most.</p>
             <div class="rail-links">
                 <a href="mailto:dan.rajkovic@icloud.com">dan.rajkovic@icloud.com</a>
                 <a href="https://www.linkedin.com/in/dejan-rajkovic" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -49,29 +49,28 @@
             <article class="article">
                 <p class="crumb"><a href="../../">Home</a><span>/</span><a href="../">Projects</a><span>/</span>Platform SDK</p>
                 <h1>AI Platform SDK</h1>
-                <p class="lede">A Python SDK so application teams share authentication, tools, and agent graphs instead of assembling that per product.</p>
+                <p class="lede">A shared Python SDK for auth, tools, memory, and agent graphs. I contribute; I did not author the whole library.</p>
 
                 <h2>Problem</h2>
-                <p>Each AI app tends to grow its own auth path, tool calls, and agent loop. Classification, planning, memory, and safety then get copied, or skipped. Multi-agent work makes that worse: there is no shared way to wire the pieces or trace them.</p>
+                <p>Each AI app tends to grow its own auth path, tool calls, and agent loop. Memory and tracing then get copied, or skipped. There is no shared way to hydrate context or emit spans.</p>
 
-                <h2>What I built</h2>
-                <p>A Python SDK with unified authentication, tool orchestration, and multi-agent systems. The agent builder is composable. Pre-built nodes cover classification, tool planning, memory hydration, and safety guardrails. OpenTelemetry is in the stack so those graphs can be traced like any other service.</p>
+                <h2>What I contributed</h2>
+                <p>Work on the platform SDK around memory hydration and OpenTelemetry so agent graphs can pull the right context and emit traces like any other service. The SDK also covers auth, tool orchestration, and guardrails; those are team-owned. My slice is the wiring that makes memory and observability usable from application code.</p>
 
                 <h2>Stack</h2>
                 <ul>
                     <li>Python</li>
                     <li>LangGraph for agent graphs</li>
                     <li>Pydantic for models and validation</li>
-                    <li>OAuth 2.0 for authentication</li>
                     <li>OpenTelemetry for traces</li>
                 </ul>
 
                 <h2>Outcome</h2>
-                <p>App teams start from shared nodes for auth, tools, memory, and guardrails. New agents are graphs on that SDK, not a new integration layer. No adoption or latency figures on this page.</p>
+                <p>App teams can hydrate memory and trace a graph without each repo inventing that layer. No adoption or latency figures on this page.</p>
 
                 <p class="article-links">
-                    <a class="text-link" href="../ai-gateway/">AI gateway</a>
-                    <a class="text-link" href="../eval-platform/">Eval platform</a>
+                    <a class="text-link" href="../ai-gateway/">AI infrastructure</a>
+                    <a class="text-link" href="../agent-observability/">Agent observability</a>
                     <a class="text-link" href="../agent-memory/">Agent memory</a>
                 </p>
             </article>

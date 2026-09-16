@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eval Platform | Dejan Rajkovic</title>
-    <meta name="description" content="Control plane for LLM and agent quality: spec builder, benchmark runs, human-in-the-loop review, and quality gates.">
-    <link rel="canonical" href="https://dejan992.github.io/about-me/projects/eval-platform/">
-    <meta property="og:title" content="Eval Platform | Dejan Rajkovic">
-    <meta property="og:description" content="Control plane for LLM and agent quality: spec builder, benchmark runs, human-in-the-loop review, and quality gates.">
+    <title>Agent Observability | Dejan Rajkovic</title>
+    <meta name="description" content="Traces, metrics, and SLOs for AI agents so a session is as operable as any other production service.">
+    <link rel="canonical" href="https://dejan992.github.io/about-me/projects/agent-observability/">
+    <meta property="og:title" content="Agent Observability | Dejan Rajkovic">
+    <meta property="og:description" content="Traces, metrics, and SLOs for AI agents so a session is as operable as any other production service.">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://dejan992.github.io/about-me/projects/eval-platform/">
+    <meta property="og:url" content="https://dejan992.github.io/about-me/projects/agent-observability/">
     <meta name="theme-color" content="#0c110d">
     <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,7 +37,7 @@
                 <a href="../../speaking/">Speaking</a>
                 <a href="../../#contact">Contact</a>
             </nav>
-            <p class="rail-copy">Quality is a platform service. Specs, runs, and review live here, not in a spreadsheet beside the agent.</p>
+            <p class="rail-copy">An agent session should be as operable as an HTTP service: traces, metrics, and a way to see where it failed.</p>
             <div class="rail-links">
                 <a href="mailto:dan.rajkovic@icloud.com">dan.rajkovic@icloud.com</a>
                 <a href="https://www.linkedin.com/in/dejan-rajkovic" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -47,30 +47,29 @@
 
         <main class="content" id="content">
             <article class="article">
-                <p class="crumb"><a href="../../">Home</a><span>/</span><a href="../">Projects</a><span>/</span>Eval platform</p>
-                <h1>Eval Platform</h1>
-                <p class="lede">A control plane for LLM and agent quality so teams can author specs, run benchmarks, and review results without each product inventing its own harness.</p>
+                <p class="crumb"><a href="../../">Home</a><span>/</span><a href="../">Projects</a><span>/</span>Agent observability</p>
+                <h1>Agent Observability</h1>
+                <p class="lede">Instrumentation for AI agents so you can see a session, a tool call, and a memory hydrate the way you already see a request in production.</p>
 
                 <h2>Problem</h2>
-                <p>Agent quality tends to live in notebooks and one-off scripts. There is no shared way to version an eval spec, launch a run, or sit a human on the outputs before something ships. Offline tests and live traffic then never meet in one place.</p>
+                <p>Agents fail quietly. The HTTP layer returns 200 while the model called the wrong tool, skipped memory, or burned the window. Logs that only say "invoke completed" are not enough to operate the system.</p>
 
                 <h2>What I built</h2>
-                <p>An eval service behind the gateway. Specs are authored in a React builder, versioned, and executed as jobs. A human-in-the-loop dashboard is the review surface: runs, golden sets, judges, and guardrails. The gateway owns policy and audit; the eval service scores. Quality gates sit in front of agents instead of after an incident.</p>
+                <p>Observability around agent sessions: traces and metrics for invoke, MCP session lifecycle, and memory hydrate and persist. OpenTelemetry in the platform SDK so graphs emit spans like any other service. Datadog for the production view, including SLOs for the AI stack. The point is operability, not a dashboard for its own sake.</p>
 
                 <h2>Stack</h2>
                 <ul>
-                    <li>Python and FastAPI for the scoring service</li>
-                    <li>React for the spec builder and review dashboard</li>
-                    <li>The AI gateway as the control plane (auth, spec versions, run audit)</li>
-                    <li>AWS for job launch and the runtime</li>
+                    <li>OpenTelemetry for traces from agents and the gateway</li>
+                    <li>Datadog for metrics, traces, and SLOs</li>
+                    <li>Python services on AWS ECS</li>
                 </ul>
 
                 <h2>Outcome</h2>
-                <p>Eval is platform work: write a spec, run it, review it. Callers do not each own a scoring stack. This page does not cite accuracy or pass-rate numbers.</p>
+                <p>When an agent misbehaves, there is a session to inspect, not a guess. This page does not cite SLO percentages or traffic numbers.</p>
 
                 <p class="article-links">
-                    <a class="text-link" href="../ai-gateway/">AI gateway</a>
-                    <a class="text-link" href="../agent-orchestrator/">Agent orchestrator</a>
+                    <a class="text-link" href="../ai-gateway/">AI infrastructure</a>
+                    <a class="text-link" href="../agent-memory/">Agent memory</a>
                     <a class="text-link" href="../platform-sdk/">Platform SDK</a>
                 </p>
             </article>

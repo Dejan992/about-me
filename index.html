@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dejan Rajkovic | Senior MLOps Engineer</title>
-    <meta name="description" content="Senior MLOps Engineer. Production ML and agent infrastructure: MCP gateways, memory, eval, orchestrators, SDKs, Kubernetes, and AWS.">
+    <meta name="description" content="Senior MLOps Engineer. Production AI infrastructure: MCP gateways, agent memory, observability, Kubernetes, and AWS.">
     <meta name="author" content="Dejan Rajkovic">
     <link rel="canonical" href="https://dejan992.github.io/about-me/">
     <meta property="og:title" content="Dejan Rajkovic | Senior MLOps Engineer">
@@ -64,7 +64,7 @@
             <section class="hero" id="home">
                 <p class="eyebrow">MLOps · AWS · Agents</p>
                 <h1>Production infrastructure for ML and AI systems.</h1>
-                <p class="lede">Day job is MLOps and AI infrastructure: MCP gateways, memory, eval, orchestrators, SDKs, Kubernetes, AWS. This site is also for side projects and speaking.</p>
+                <p class="lede">Day job is MLOps and AI infrastructure: MCP gateways, memory, agent observability, Kubernetes, AWS. This site is also for side projects and speaking.</p>
                 <div class="hero-actions">
                     <a class="btn btn-primary" href="#projects">Projects</a>
                     <a class="btn btn-ghost" href="speaking/">Speaking</a>
@@ -83,8 +83,8 @@
                     <span class="section-kicker">01</span>
                 </div>
                 <div class="prose">
-                    <p>I am a Senior MLOps Engineer. Day-to-day work is automated, scalable, and secure machine learning systems: AWS, Kubernetes, ML pipelines, and infrastructure as code.</p>
-                    <p>The job sits between data science and operations: get models into production and keep them reliable. MCP gateways, eval, CI/CD for ML, and the platform around them.</p>
+                    <p>I am a Senior MLOps Engineer. AI infrastructure is the wheelhouse: AWS, Kubernetes, and getting agent systems into production and keeping them visible.</p>
+                    <p>Day-to-day that means the MCP gateway runtime, agent memory, and observability around sessions. I contribute to the platform SDK. The job sits between data science and operations.</p>
                     <p>I am based in Arizona. Time off is outdoors with my wife, two kids, and two dogs. Bikes to the lake to watch the ducks. New hiking trails when we can find them.</p>
                 </div>
             </section>
@@ -153,6 +153,7 @@
                             <span class="tag">DevSecOps</span>
                             <span class="tag">Snyk</span>
                             <span class="tag">Datadog</span>
+                            <span class="tag">OpenTelemetry</span>
                             <span class="tag">Prometheus</span>
                             <span class="tag">Grafana</span>
                         </div>
@@ -192,18 +193,18 @@
                     <div class="projects">
                         <article class="project">
                             <div class="project-top">
-                                <h3><a href="projects/ai-gateway/">AI Gateway Platform</a></h3>
+                                <h3><a href="projects/ai-gateway/">AI Platform Infrastructure</a></h3>
                                 <span class="project-index">01</span>
                             </div>
-                            <p>MCP gateway for AI clients. OAuth 2.1, tool brokering, multi-tenant configuration, and zero-downtime hot reloads. React admin UI, service registry, skills registry, and a voice transcription microservice.</p>
+                            <p>Production infrastructure for an MCP gateway: AWS CDK, ECS, tenant config with hot reload, deploy pipelines, and Datadog wiring so sessions stay operable.</p>
                             <div class="tags">
+                                <span class="tag">AWS CDK</span>
+                                <span class="tag">ECS</span>
                                 <span class="tag">Python</span>
-                                <span class="tag">FastAPI</span>
                                 <span class="tag">MCP</span>
-                                <span class="tag">React</span>
                                 <span class="tag">DynamoDB</span>
                                 <span class="tag">Redis</span>
-                                <span class="tag">AWS CDK</span>
+                                <span class="tag">Datadog</span>
                             </div>
                             <p class="project-more"><a href="projects/ai-gateway/">Project page</a></p>
                         </article>
@@ -224,52 +225,36 @@
                         </article>
                         <article class="project">
                             <div class="project-top">
-                                <h3><a href="projects/platform-sdk/">AI Platform SDK</a></h3>
+                                <h3><a href="projects/agent-observability/">Agent Observability</a></h3>
                                 <span class="project-index">03</span>
                             </div>
-                            <p>Python SDK for AI applications: unified authentication, tool orchestration, and multi-agent systems. Composable agent builder with nodes for classification, tool planning, memory hydration, and safety guardrails.</p>
+                            <p>Traces, metrics, and SLOs for AI agents. Invoke, MCP session lifecycle, and memory hydrate and persist show up like any other production request, not as a silent 200.</p>
+                            <div class="tags">
+                                <span class="tag">OpenTelemetry</span>
+                                <span class="tag">Datadog</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">AWS ECS</span>
+                            </div>
+                            <p class="project-more"><a href="projects/agent-observability/">Project page</a></p>
+                        </article>
+                        <article class="project">
+                            <div class="project-top">
+                                <h3><a href="projects/platform-sdk/">AI Platform SDK</a></h3>
+                                <span class="project-index">04</span>
+                            </div>
+                            <p>Contributions to a Python SDK for AI applications. Memory hydration and OpenTelemetry traces so app teams do not each invent that layer. Auth, tools, and guardrails are shared team work.</p>
                             <div class="tags">
                                 <span class="tag">Python</span>
                                 <span class="tag">LangGraph</span>
                                 <span class="tag">Pydantic</span>
-                                <span class="tag">OAuth 2.0</span>
                                 <span class="tag">OpenTelemetry</span>
                             </div>
                             <p class="project-more"><a href="projects/platform-sdk/">Project page</a></p>
                         </article>
                         <article class="project">
                             <div class="project-top">
-                                <h3><a href="projects/eval-platform/">Eval Platform</a></h3>
-                                <span class="project-index">04</span>
-                            </div>
-                            <p>Control plane for LLM and agent quality. Spec builder, versioned evals, benchmark runs, and a human-in-the-loop review dashboard. Quality gates sit in front of agents instead of in a notebook beside them.</p>
-                            <div class="tags">
-                                <span class="tag">Python</span>
-                                <span class="tag">FastAPI</span>
-                                <span class="tag">React</span>
-                                <span class="tag">AWS</span>
-                            </div>
-                            <p class="project-more"><a href="projects/eval-platform/">Project page</a></p>
-                        </article>
-                        <article class="project">
-                            <div class="project-top">
-                                <h3><a href="projects/agent-orchestrator/">Agent Orchestrator</a></h3>
-                                <span class="project-index">05</span>
-                            </div>
-                            <p>Job control plane for multi-agent work. Decompose an objective into tasks, run them, and inspect the swarm. Scheduler, event bus, and an inspection UI. Slack is a client of the same stack.</p>
-                            <div class="tags">
-                                <span class="tag">Python</span>
-                                <span class="tag">FastAPI</span>
-                                <span class="tag">PostgreSQL</span>
-                                <span class="tag">React</span>
-                                <span class="tag">AWS ECS</span>
-                            </div>
-                            <p class="project-more"><a href="projects/agent-orchestrator/">Project page</a></p>
-                        </article>
-                        <article class="project">
-                            <div class="project-top">
                                 <h3>Meeting Intelligence Bot</h3>
-                                <span class="project-index">06</span>
+                                <span class="project-index">05</span>
                             </div>
                             <p>Async Slack bot for meeting intelligence: calendar audits, post-meeting summaries, and action item tracking. Multi-provider OAuth, real-time typing indicators, and credential management.</p>
                             <div class="tags">
@@ -290,7 +275,7 @@
                         <article class="project">
                             <div class="project-top">
                                 <h3>EKS Cluster Management</h3>
-                                <span class="project-index">07</span>
+                                <span class="project-index">06</span>
                             </div>
                             <p>Production Kubernetes clusters with GitOps workflows, automated scaling, and monitoring.</p>
                             <div class="tags">
@@ -303,7 +288,7 @@
                         <article class="project">
                             <div class="project-top">
                                 <h3>AWS Account Vending Machine</h3>
-                                <span class="project-index">08</span>
+                                <span class="project-index">07</span>
                             </div>
                             <p>Automated AWS account provisioning with security controls, IAM policies, and networking.</p>
                             <div class="tags">
@@ -315,7 +300,7 @@
                         <article class="project">
                             <div class="project-top">
                                 <h3>AWS Cost Analyzer</h3>
-                                <span class="project-index">09</span>
+                                <span class="project-index">08</span>
                             </div>
                             <p>GitHub Action for AWS cost analysis and reporting, used to track and cut cloud spend.</p>
                             <div class="tags">
@@ -327,7 +312,7 @@
                         <article class="project">
                             <div class="project-top">
                                 <h3>Platform Security Infrastructure</h3>
-                                <span class="project-index">10</span>
+                                <span class="project-index">09</span>
                             </div>
                             <p>Multi-account AWS organization with SCPs, security controls, and compliance automation.</p>
                             <div class="tags">
@@ -343,7 +328,7 @@
                     <h3>Side projects</h3>
                     <div class="writing-empty">
                         <strong>Nothing listed yet</strong>
-                        This slot is for after-hours and personal builds. Product pages for the AI gateway, memory, eval, orchestrator, and platform SDK stay under product work above.
+                        This slot is for after-hours and personal builds. Product pages for infrastructure, memory, observability, and the SDK stay under product work above.
                     </div>
                 </div>
             </section>

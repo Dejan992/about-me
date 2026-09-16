@@ -413,7 +413,10 @@ img {
 }
 
 .about-image {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
 .image-frame {
@@ -439,14 +442,12 @@ img {
 }
 
 .experience-badge {
-    position: absolute;
-    bottom: -20px;
-    right: -20px;
     background: var(--gradient);
-    padding: 24px;
+    padding: 20px 28px;
     border-radius: 16px;
     text-align: center;
     box-shadow: var(--shadow);
+    width: 100%;
 }
 
 .experience-badge .years {
@@ -948,9 +949,6 @@ img {
     }
     
     .experience-badge {
-        right: 50%;
-        transform: translateX(50%);
-        bottom: -30px;
         padding: 16px;
     }
 

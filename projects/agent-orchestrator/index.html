@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Gateway Platform | Dejan Rajkovic</title>
-    <meta name="description" content="MCP gateway for AI clients: OAuth 2.1, tool brokering, multi-tenant config, and zero-downtime hot reloads.">
-    <link rel="canonical" href="https://dejan992.github.io/about-me/projects/ai-gateway/">
-    <meta property="og:title" content="AI Gateway Platform | Dejan Rajkovic">
-    <meta property="og:description" content="MCP gateway for AI clients: OAuth 2.1, tool brokering, multi-tenant config, and zero-downtime hot reloads.">
+    <title>Agent Orchestrator | Dejan Rajkovic</title>
+    <meta name="description" content="Job control plane for multi-agent work: decompose an objective into tasks, run them, and inspect the swarm.">
+    <link rel="canonical" href="https://dejan992.github.io/about-me/projects/agent-orchestrator/">
+    <meta property="og:title" content="Agent Orchestrator | Dejan Rajkovic">
+    <meta property="og:description" content="Job control plane for multi-agent work: decompose an objective into tasks, run them, and inspect the swarm.">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://dejan992.github.io/about-me/projects/ai-gateway/">
+    <meta property="og:url" content="https://dejan992.github.io/about-me/projects/agent-orchestrator/">
     <meta name="theme-color" content="#0c110d">
     <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,7 +37,7 @@
                 <a href="../../speaking/">Speaking</a>
                 <a href="../../#contact">Contact</a>
             </nav>
-            <p class="rail-copy">One hop for IDEs and apps. MCP sessions, tenant config, and hot reloads live in the gateway.</p>
+            <p class="rail-copy">A job is the unit of work. Agents run tasks; the orchestrator owns schedule, state, and inspection.</p>
             <div class="rail-links">
                 <a href="mailto:dan.rajkovic@icloud.com">dan.rajkovic@icloud.com</a>
                 <a href="https://www.linkedin.com/in/dejan-rajkovic" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -47,32 +47,30 @@
 
         <main class="content" id="content">
             <article class="article">
-                <p class="crumb"><a href="../../">Home</a><span>/</span><a href="../">Projects</a><span>/</span>AI Gateway</p>
-                <h1>AI Gateway Platform</h1>
-                <p class="lede">An MCP gateway so AI clients talk to one OAuth front door instead of each wiring tools, auth, and tenant config.</p>
+                <p class="crumb"><a href="../../">Home</a><span>/</span><a href="../">Projects</a><span>/</span>Agent orchestrator</p>
+                <h1>Agent Orchestrator</h1>
+                <p class="lede">A job control plane for multi-agent work: split an objective into tasks, execute them, and inspect the run without embedding that loop in every product.</p>
 
                 <h2>Problem</h2>
-                <p>IDEs and apps that call tools and model APIs directly scatter credentials, tenant settings, and protocol handling across every caller. A config edit then means a deploy in each one. Skills, voice, and admin work grow as one-off services beside that mess.</p>
+                <p>A single agent call is easy. A piece of work that needs several agents, retries, and a human-visible trail is not. Teams then grow ad hoc loops, lose job state when a process dies, and have no place to look at the swarm while it runs.</p>
 
                 <h2>What I built</h2>
-                <p>A Model Context Protocol gateway. Clients open an MCP session; the gateway brokers those calls to backend tools with scope checks. OAuth 2.1 at the edge, including device flows for IDE clients. Multi-tenant configuration that hot-reloads without taking the process down. A React admin UI, a service registry, and a skills and plugins registry sit on the same platform. Voice transcription is a sibling microservice. Slack can be a client of this stack; it is not a second control plane.</p>
+                <p>An orchestrator service with a REST API and an inspection UI. Jobs decompose an objective into tasks, run them through the gateway and agent runtime, and aggregate results. A scheduler and event bus keep that durable. Slack is a client of the same control plane, not a second brain: the orchestrator still owns inference, memory, auth, and audit. A related pipeline engine dispatches agent stages over work items, with kill switches and webhooks, when the work is a factory line instead of a one-shot job.</p>
 
                 <h2>Stack</h2>
                 <ul>
-                    <li>Python and FastAPI for the gateway</li>
-                    <li>MCP for tool sessions (SSE and related transports)</li>
-                    <li>React for the admin UI</li>
-                    <li>DynamoDB and Redis for config and runtime state</li>
-                    <li>AWS CDK for the infrastructure</li>
+                    <li>Python and FastAPI for the job engine</li>
+                    <li>PostgreSQL for job and task state</li>
+                    <li>React for the swarm-inspection UI</li>
+                    <li>AWS ECS for the runtime</li>
                 </ul>
 
                 <h2>Outcome</h2>
-                <p>Callers talk to one gateway. MCP brokering, tenant config, and reloads are platform work, not something each app has to own. This page does not cite traffic or uptime numbers.</p>
+                <p>Multi-step agent work has a job object, a schedule, and a UI. Chat clients and Slack are transports. This page does not cite throughput or uptime numbers.</p>
 
                 <p class="article-links">
-                    <a class="text-link" href="../../writing/ai-gateway-multi-provider-routing/">Note on gateway routing</a>
+                    <a class="text-link" href="../ai-gateway/">AI gateway</a>
                     <a class="text-link" href="../eval-platform/">Eval platform</a>
-                    <a class="text-link" href="../agent-orchestrator/">Agent orchestrator</a>
                     <a class="text-link" href="../agent-memory/">Agent memory</a>
                 </p>
             </article>

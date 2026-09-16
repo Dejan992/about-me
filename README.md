@@ -18,9 +18,10 @@ Relative links are used throughout so the site works both at `/about-me/` and on
 
 ## Pages
 
-- `index.html`: home, about, skills, certifications, projects, contact
-- `projects/`: index plus pages for AI Gateway, Agent Memory, and Platform SDK
+- `index.html`: home (Work, Projects, Speaking, Contact)
+- `projects/`: AI Gateway, Agent Memory, Platform SDK, plus a side-projects slot
 - `writing/`: notes index and stub posts
+- `speaking/`: talk abstracts and engagements (empty until real dates exist)
 - `404.html`: GitHub Pages not-found page
 - `sitemap.xml` and `robots.txt`: crawl hints for the Pages URL
 

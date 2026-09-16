@@ -1,6 +1,6 @@
 # Dejan Rajkovic
 
-Personal site for a Senior MLOps Engineer. Static HTML, CSS, and JavaScript, served from GitHub Pages at [dejan992.github.io/about-me](https://dejan992.github.io/about-me).
+Personal site for a Senior MLOps Engineer. Static HTML, CSS, and JavaScript, served from GitHub Pages at [dejan992.github.io/about-me](https://dejan992.github.io/about-me). Custom domain is deferred.
 
 ## Local preview
 
@@ -19,13 +19,15 @@ Relative links are used throughout so the site works both at `/about-me/` and on
 ## Pages
 
 - `index.html`: home, about, skills, certifications, projects, contact
-- `writing/index.html`: notes index (ready for posts)
+- `projects/`: index plus pages for AI Gateway, Agent Memory, and Platform SDK
+- `writing/`: notes index and stub posts
 - `404.html`: GitHub Pages not-found page
+- `sitemap.xml` and `robots.txt`: crawl hints for the Pages URL
 
 ## Adding a note
 
 1. Create `writing/your-slug/index.html`.
-2. Link it from `writing/index.html`.
+2. Link it from `writing/index.html` with a date and one-line summary.
 3. Keep CSS and JS paths relative (`../../styles.css` from a nested note).
 
 No CMS and no build step. One HTML file per note is enough.

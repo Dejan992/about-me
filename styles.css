@@ -428,12 +428,8 @@ code {
     margin-bottom: 0.45rem;
 }
 
-.project h3 {
-    font-size: 1.05rem;
-    letter-spacing: -0.02em;
-    text-transform: none;
-    font-family: var(--sans);
-    font-weight: 700;
+.project h3 a:hover {
+    color: var(--accent);
 }
 
 .project-index {
@@ -501,6 +497,130 @@ code {
 
 .page-intro p {
     color: var(--muted);
+}
+
+.crumb {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--faint);
+    margin-bottom: 1.1rem;
+}
+
+.crumb a:hover {
+    color: var(--accent);
+}
+
+.crumb span {
+    margin: 0 0.4rem;
+}
+
+.article {
+    max-width: var(--measure);
+}
+
+.article h1 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    margin-bottom: 0.85rem;
+}
+
+.article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem 0.9rem;
+    color: var(--faint);
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    margin-bottom: 1.75rem;
+}
+
+.stub-label {
+    color: var(--accent);
+}
+
+.article h2 {
+    font-size: 1.05rem;
+    margin: 2rem 0 0.7rem;
+    letter-spacing: -0.02em;
+}
+
+.article p,
+.article li {
+    color: var(--muted);
+}
+
+.article p + p {
+    margin-top: 0.9rem;
+}
+
+.article ul {
+    margin: 0.6rem 0 0;
+    padding-left: 1.15rem;
+}
+
+.article li + li {
+    margin-top: 0.35rem;
+}
+
+.article-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+    margin-top: 2rem;
+    font-size: 0.95rem;
+}
+
+.post-list {
+    display: grid;
+    gap: 0;
+    border-top: 1px solid var(--line);
+}
+
+.post-item {
+    display: grid;
+    grid-template-columns: 8.5rem minmax(0, 1fr);
+    gap: 1rem 1.5rem;
+    padding: 1.15rem 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.post-item time {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--faint);
+    padding-top: 0.2rem;
+}
+
+.post-item h2 {
+    font-size: 1.05rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.3rem;
+}
+
+.post-item h2 a:hover {
+    color: var(--accent);
+}
+
+.post-takeaway {
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.project-more {
+    margin: 0.85rem 0 0;
+    font-size: 0.9rem;
+}
+
+.project-more a {
+    color: var(--accent);
+}
+
+@media (max-width: 900px) {
+    .post-item {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+    }
 }
 
 .site-footer {

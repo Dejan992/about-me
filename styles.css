@@ -394,7 +394,7 @@ code {
     margin-bottom: 2rem;
 }
 
-.project-group h3 {
+.project-group > h3 {
     font-family: var(--mono);
     font-size: 0.75rem;
     letter-spacing: 0.1em;
@@ -431,6 +431,9 @@ code {
 .project h3 {
     font-size: 1.05rem;
     letter-spacing: -0.02em;
+    text-transform: none;
+    font-family: var(--sans);
+    font-weight: 700;
 }
 
 .project-index {
@@ -589,6 +592,10 @@ code {
     .skill-row {
         grid-template-columns: 1fr;
         gap: 0.4rem;
+    }
+
+    html {
+        scroll-padding-top: 4.75rem;
     }
 }
 

@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Gateway Platform | Dejan Rajkovic</title>
-    <meta name="description" content="Enterprise gateway that routes AI requests across providers with OAuth 2.1, multi-tenant config, and zero-downtime hot reloads.">
+    <title>AI Platform Infrastructure | Dejan Rajkovic</title>
+    <meta name="description" content="Production infrastructure for an MCP gateway: AWS CDK, ECS, config, hot reload, and the wiring that keeps agent sessions operable.">
     <link rel="canonical" href="https://dejan992.github.io/about-me/projects/ai-gateway/">
-    <meta property="og:title" content="AI Gateway Platform | Dejan Rajkovic">
-    <meta property="og:description" content="Enterprise gateway that routes AI requests across providers with OAuth 2.1, multi-tenant config, and zero-downtime hot reloads.">
+    <meta property="og:title" content="AI Platform Infrastructure | Dejan Rajkovic">
+    <meta property="og:description" content="Production infrastructure for an MCP gateway: AWS CDK, ECS, config, hot reload, and the wiring that keeps agent sessions operable.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://dejan992.github.io/about-me/projects/ai-gateway/">
     <meta name="theme-color" content="#0c110d">
@@ -37,7 +37,7 @@
                 <a href="../../speaking/">Speaking</a>
                 <a href="../../#contact">Contact</a>
             </nav>
-            <p class="rail-copy">One hop for apps. Provider routing, tenant config, and hot reloads live in the gateway.</p>
+            <p class="rail-copy">AI infrastructure is the job: CDK, ECS, config, and deploy so an MCP gateway stays up and visible.</p>
             <div class="rail-links">
                 <a href="mailto:dan.rajkovic@icloud.com">dan.rajkovic@icloud.com</a>
                 <a href="https://www.linkedin.com/in/dejan-rajkovic" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -47,31 +47,32 @@
 
         <main class="content" id="content">
             <article class="article">
-                <p class="crumb"><a href="../../">Home</a><span>/</span><a href="../">Projects</a><span>/</span>AI Gateway</p>
-                <h1>AI Gateway Platform</h1>
-                <p class="lede">A gateway in front of multiple AI providers so apps do not each implement routing, auth, and tenant config.</p>
+                <p class="crumb"><a href="../../">Home</a><span>/</span><a href="../">Projects</a><span>/</span>AI infrastructure</p>
+                <h1>AI Platform Infrastructure</h1>
+                <p class="lede">Production infrastructure for an MCP gateway: deploy, config, and runtime so AI clients have one operable front door.</p>
 
                 <h2>Problem</h2>
-                <p>Teams calling providers directly scatter API keys, tenant settings, and failover logic across services. A provider change or config edit then means a deploy in every caller. Voice transcription and admin work tend to grow as one-off services beside that mess.</p>
+                <p>An MCP gateway is not useful if it only runs on a laptop. Teams need CDK, containers, config that can change without a bounce, and enough telemetry to see when a session dies. That layer is easy to skip while the product features grow.</p>
 
                 <h2>What I built</h2>
-                <p>An enterprise gateway that routes requests across providers. OAuth 2.1 for authentication. Multi-tenant configuration that can hot-reload without taking the gateway down. A React admin UI, a service registry, and a voice transcription microservice sit on the same platform.</p>
+                <p>The infrastructure under the gateway. AWS CDK and ECS for the runtime. DynamoDB and Redis for tenant config, with hot reload so a settings change does not take the process down. Docker, CI, and the deploy path. Wiring so MCP sessions and agent invokes show up in Datadog. I did not build every product surface on that stack; infra is the wheelhouse.</p>
 
                 <h2>Stack</h2>
                 <ul>
-                    <li>Python and FastAPI for the gateway</li>
-                    <li>React for the admin UI</li>
+                    <li>AWS CDK, ECS, and Docker</li>
                     <li>DynamoDB and Redis for config and runtime state</li>
-                    <li>AWS CDK for the infrastructure</li>
+                    <li>Python and FastAPI for the gateway process</li>
+                    <li>MCP as the client protocol</li>
+                    <li>Datadog for the production view</li>
                 </ul>
 
                 <h2>Outcome</h2>
-                <p>Callers talk to one gateway. Provider routing, tenant config, and reloads are platform work, not something each app has to own. This page does not cite traffic or uptime numbers.</p>
+                <p>The gateway is a production service: deployable, configurable, and observable. This page does not cite traffic or uptime numbers.</p>
 
                 <p class="article-links">
-                    <a class="text-link" href="../../writing/ai-gateway-multi-provider-routing/">Note on multi-provider routing</a>
+                    <a class="text-link" href="../../writing/ai-gateway-multi-provider-routing/">Note on gateway routing</a>
+                    <a class="text-link" href="../agent-observability/">Agent observability</a>
                     <a class="text-link" href="../agent-memory/">Agent memory</a>
-                    <a class="text-link" href="../platform-sdk/">Platform SDK</a>
                 </p>
             </article>
 

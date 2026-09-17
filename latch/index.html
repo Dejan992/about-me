@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latch — Auditable agent action gates</title>
+  <meta name="description" content="VPC decision control plane — typed approve/deny/escalate with confidence and immutable audit, before every risky tool-call.">
+  <meta name="author" content="Dejan Rajkovic">
+  <link rel="canonical" href="https://dejan992.github.io/about-me/latch/">
+  <meta property="og:title" content="Latch — Auditable agent action gates">
+  <meta property="og:description" content="VPC decision control plane — typed approve/deny/escalate with confidence and immutable audit, before every risky tool-call.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dejan992.github.io/about-me/latch/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Latch — Auditable agent action gates">
+  <meta name="twitter:description" content="VPC decision control plane — typed approve/deny/escalate with confidence and immutable audit, before every risky tool-call.">
+  <meta name="theme-color" content="#0a0b0d">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Latch",
+    "applicationCategory": "BusinessApplication",
+    "description": "VPC decision control plane — typed approve/deny/escalate with confidence and immutable audit, before every risky tool-call.",
+    "url": "https://dejan992.github.io/about-me/latch/",
+    "offers": {
+      "@type": "Offer",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "minPrice": "40000",
+        "maxPrice": "75000",
+        "priceCurrency": "USD"
+      },
+      "description": "90-day pilot on one production queue, purchase order $40–75k."
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Dejan Rajkovic",
+      "email": "dan.rajkovic@icloud.com",
+      "sameAs": [
+        "https://www.linkedin.com/in/dejan-rajkovic",
+        "https://github.com/Dejan992"
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <header class="top">
+    <div class="wrap top-inner">
+      <a class="mark" href="./">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" fill="#0a0b0d"/>
+          <g fill="none" stroke="#c9a56a" stroke-width="1.75" stroke-linecap="square">
+            <rect x="6" y="8" width="10" height="16"/>
+            <path d="M16 12h7v8h-7"/>
+            <path d="M19.5 16h4"/>
+          </g>
+        </svg>
+        Latch
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#queue">Pilot</a>
+        <a href="#sla">SLA</a>
+        <a href="#cascade">Cascade</a>
+        <a href="#security">Security</a>
+        <a href="#commercial">PO</a>
+        <a href="#readiness">Readiness</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <header class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="kicker">Decision control plane</p>
+          <h1>Actions don’t run until Latch opens</h1>
+          <p class="lede">Latch sits in your VPC, in front of every risky tool-call. The agent runtime asks first. Latch returns a typed approve, deny, or escalate — with calibrated confidence — and appends an immutable audit record before any side effect.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#readiness">Request a 90-day pilot</a>
+            <a class="btn btn-ghost" href="#sla">Read the SLA</a>
+          </div>
+          <p class="meta-row">
+            <span>One production queue</span>
+            <span>90 days</span>
+            <span>$40–75k PO</span>
+            <span>Customer VPC</span>
+          </p>
+        </div>
+        <aside class="define">
+          <h2>What Latch is</h2>
+          <p>A decision control plane. Not an SDK SKU.</p>
+          <ul>
+            <li>Policy for the actions you gate</li>
+            <li>Gate API the runtime calls before side effects</li>
+            <li>Audit store, append-only</li>
+            <li>Escalation to a named owner or a model</li>
+          </ul>
+        </aside>
+      </div>
+    </header>
+
+    <section id="queue">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="sec-num">01</span>
+          <h2>One production queue. Ninety days.</h2>
+        </div>
+        <div class="prose">
+          <p>The pilot is a live gate on one production queue — the queue that already writes, pays, deletes, notifies, or changes state. You keep the agent runtime. Latch owns the decision and the record.</p>
+          <p>Default policy is explicit: <strong>high confidence auto-approves and skips the expensive model call</strong>. <strong>Low confidence escalates</strong> to the named human owner, or to a model you already run, according to policy.</p>
+        </div>
+        <div class="split" style="margin-top:1.5rem">
+          <article class="card">
+            <h3>What you keep</h3>
+            <ul>
+              <li>The runtime, tools, and identity plane</li>
+              <li>A pre-tool hook that calls Latch before side effects</li>
+              <li>The named queue and its owners</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>What Latch runs in the VPC</h3>
+            <ul>
+              <li>Policy for that queue</li>
+              <li>Gate API</li>
+              <li>Immutable audit store</li>
+              <li>Escalation path</li>
+            </ul>
+          </article>
+        </div>
+        <ol class="timeline" style="margin-top:1.5rem">
+          <li>
+            <strong>Days 1–7</strong>
+            <span>Hook, policy, audit path, and named escalation owner. Schema-valid answers on the gated path before the queue is cut over.</span>
+          </li>
+          <li>
+            <strong>Days 8–90</strong>
+            <span>The queue runs through Latch. Weekly review of auto-approves, denials, and escalations against the holdout.</span>
+          </li>
+          <li>
+            <strong>Day 90</strong>
+            <span>Holdout comparison and a written decision on whether the gate stays on that queue.</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="sla">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="sec-num">02</span>
+          <h2>SLA on the gated path</h2>
+        </div>
+        <div class="sla">
+          <article>
+            <p class="tag">Latency</p>
+            <p class="figure">p95 ≤ 500ms</p>
+            <p>Measured from Latch ingress to typed response. Excludes your network and the runtime’s own queueing.</p>
+          </article>
+          <article>
+            <p class="tag">Contract</p>
+            <p class="figure">Schema-valid</p>
+            <p>Every answer is typed: <code>approve</code>, <code>deny</code>, or <code>escalate</code>, plus a calibrated confidence score.</p>
+          </article>
+          <article>
+            <p class="tag">Record</p>
+            <p class="figure">Full audit</p>
+            <p>The decision is appended to the audit store before the runtime is allowed to proceed or is told to stop.</p>
+          </article>
+        </div>
+        <p class="note">If Latch cannot produce a schema-valid decision inside the latency bound, the configured fail-closed or fail-escalate policy applies. That outcome is still written to audit.</p>
+      </div>
+    </section>
+
+    <section id="cascade">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="sec-num">03</span>
+          <h2>Confidence cascade</h2>
+        </div>
+        <p class="prose">The runtime intercepts the tool-call. Latch scores confidence against policy. High confidence opens the gate without a model. Low confidence escalates. Either way the answer is typed and the log is written.</p>
+        <div class="cascade" style="margin-top:1.5rem">
+          <div class="flow" aria-hidden="true">
+            <div class="flow-box">
+              <p class="tag">Runtime</p>
+              <h3>Tool-call intercepted</h3>
+              <p>Write, pay, delete, notify, or any other side effect you mark as gated.</p>
+            </div>
+            <div class="arrow">→</div>
+            <div class="flow-box">
+              <p class="tag">Latch</p>
+              <h3>Policy + confidence</h3>
+              <p>Match the action, score confidence, apply the default cascade.</p>
+            </div>
+            <div class="arrow">→</div>
+            <div class="flow-box">
+              <p class="tag">Record</p>
+              <h3>Typed decision</h3>
+              <p>approve / deny / escalate, confidence, policy version, actor, action digest.</p>
+            </div>
+          </div>
+          <div class="split-path">
+            <div class="branch-box high">
+              <p class="tag">High confidence</p>
+              <h3>Auto-approve</h3>
+              <p>The gate opens. No expensive model call. Audit is written. The runtime executes.</p>
+            </div>
+            <div class="branch-box low">
+              <p class="tag">Low confidence</p>
+              <h3>Escalate</h3>
+              <p>Human owner or a model you already operate, per policy. The side effect waits.</p>
+            </div>
+          </div>
+          <div class="always">
+            <p class="tag">Always</p>
+            <p>Typed answer. Calibrated confidence. Immutable audit append. Then — and only then — the action runs, or it does not.</p>
+          </div>
+        </div>
+        <p class="sr-only">Flow: the agent runtime intercepts a risky tool-call and asks Latch. Latch applies policy and a confidence score. High confidence auto-approves and skips a model call. Low confidence escalates to a human or a model. Every path writes a typed approve, deny, or escalate to an immutable audit log before the runtime proceeds.</p>
+      </div>
+    </section>
+
+    <section id="security">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="sec-num">04</span>
+          <h2>VPC and security questionnaire</h2>
+        </div>
+        <p class="prose">Answers a security team can take into review. Architecture diagrams and the current questionnaire ride with the pilot PO — not a public certification claim.</p>
+        <div class="qa" style="margin-top:1.25rem">
+          <details open>
+            <summary>Where does Latch run?</summary>
+            <p>In your VPC. Policy, gate API, audit store, and escalation stay on your side of the boundary. Latch is not a cloud SKU that has to see the traffic first.</p>
+          </details>
+          <details>
+            <summary>What does the runtime send?</summary>
+            <p>The action proposal: tool name, typed arguments, actor, and policy context. Full prompt corpora are out unless you explicitly configure that field in.</p>
+          </details>
+          <details>
+            <summary>What is written to audit?</summary>
+            <p>Decision (<code>approve</code> | <code>deny</code> | <code>escalate</code>), confidence, policy version, actor, action digest, and timestamp. Records are append-only. They are not edited in place.</p>
+          </details>
+          <details>
+            <summary>How does redaction work?</summary>
+            <p>You define the redaction path before anything is stored. Secrets, raw document bodies, and fields you mark never enter the audit payload. If a field cannot be redacted, it does not get logged.</p>
+          </details>
+          <details>
+            <summary>How is the runtime authenticated?</summary>
+            <p>Workload identity: mTLS or the identity plane you already use. Latch authenticates the caller, not an end-user directory we host.</p>
+          </details>
+          <details>
+            <summary>Does Latch require a hosted model?</summary>
+            <p>No. High-confidence decisions skip the model. Escalation may call a model you already run, or a named human. Latch does not require a Latch-hosted LLM.</p>
+          </details>
+          <details>
+            <summary>What is excluded from the latency SLA?</summary>
+            <p>Your network, DNS, and the runtime’s own queueing. p95 ≤ 500ms is Latch ingress to typed response.</p>
+          </details>
+          <details>
+            <summary>Do you claim a public certification?</summary>
+            <p>No. We send the questionnaire, data-flow diagram, and the VPC deployment notes. Ask for those; do not infer a certificate from this page.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="commercial">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="sec-num">05</span>
+          <h2>Pilot purchase order</h2>
+        </div>
+        <p class="prose">A 90-day gate on one production queue. PO, not a banner trial.</p>
+        <dl class="commercial" style="margin-top:1.5rem">
+          <dt>Price</dt>
+          <dd>$40–75k, depending on volume, number of gated action types, and whether escalation is human-only or includes a model you already run.</dd>
+          <dt>Term</dt>
+          <dd>90 days from cut-over of the named queue.</dd>
+          <dt>Scope</dt>
+          <dd>Policy design for that queue, gate API, audit store, escalation, on-call during the window, weekly decision review.</dd>
+          <dt>Out of scope</dt>
+          <dd>Rewriting the agent runtime, extra queues, and any work that is not the gated path.</dd>
+          <dt>Owner</dt>
+          <dd>Dejan Rajkovic · <a href="mailto:dan.rajkovic@icloud.com?subject=Latch%20pilot">dan.rajkovic@icloud.com</a> · <a href="https://www.linkedin.com/in/dejan-rajkovic" rel="noopener noreferrer">LinkedIn</a></dd>
+        </dl>
+      </div>
+    </section>
+
+    <section id="readiness">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="sec-num">06</span>
+          <h2>Customer readiness checklist</h2>
+        </div>
+        <p class="prose">If this is incomplete, you are not ready for a Latch pilot. The form will say so. It will not pretend you can book a walkthrough instead.</p>
+
+        <form id="readiness-form" style="margin-top:1.5rem" novalidate>
+          <fieldset>
+            <legend>Contact</legend>
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="email">Work email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="company">Company</label>
+              <input id="company" name="company" type="text" autocomplete="organization" required>
+            </div>
+            <div class="field">
+              <label for="role">Role</label>
+              <input id="role" name="role" type="text" autocomplete="organization-title" placeholder="Security, platform, or queue owner">
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Gate prerequisites</legend>
+            <div class="field">
+              <p id="hook-label">Is a pre-tool hook available so the runtime can call Latch before side effects?</p>
+              <div class="choices" role="radiogroup" aria-labelledby="hook-label">
+                <label><input type="radio" name="hook" value="yes"> Yes</label>
+                <label><input type="radio" name="hook" value="no"> No</label>
+              </div>
+              <p class="hint">If the runtime cannot intercept the tool-call, Latch has nothing to gate.</p>
+            </div>
+            <div class="field">
+              <label for="queue">One production queue for the 90-day window</label>
+              <input id="queue" name="queue" type="text" required placeholder="Queue name, environment, and owner team">
+            </div>
+            <div class="field">
+              <label for="escalation">Escalation owner</label>
+              <input id="escalation" name="escalation" type="text" required placeholder="Name and email who takes low-confidence decisions">
+            </div>
+            <div class="field">
+              <label for="holdout">Sample / holdout</label>
+              <textarea id="holdout" name="holdout" required placeholder="How you will compare gated vs ungated actions on this queue"></textarea>
+            </div>
+            <div class="field">
+              <label for="volume">Volume and gated actions</label>
+              <textarea id="volume" name="volume" required placeholder="Approximate daily volume and which tool-calls will be gated (write, pay, delete, notify, …)"></textarea>
+            </div>
+            <div class="field">
+              <label for="vpc">VPC and redaction path</label>
+              <textarea id="vpc" name="vpc" required placeholder="Where Latch will run, how the runtime reaches it, and what is stripped before a record is stored"></textarea>
+            </div>
+          </fieldset>
+
+          <div id="readiness-status" class="status blocked" role="status" aria-live="polite"></div>
+
+          <div class="form-actions">
+            <button class="btn" id="request-pilot" type="submit" disabled>Checklist incomplete</button>
+            <p class="hint">Complete answers mail dan.rajkovic@icloud.com with subject “Latch pilot”.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot-row">
+        <p>Latch · Dejan Rajkovic · <a href="mailto:dan.rajkovic@icloud.com?subject=Latch%20pilot">dan.rajkovic@icloud.com</a></p>
+        <p><a href="https://www.linkedin.com/in/dejan-rajkovic" rel="noopener noreferrer">LinkedIn /in/dejan-rajkovic</a> · <a href="https://github.com/Dejan992">GitHub</a></p>
+      </div>
+      <p class="powered">Powered by typed decisioning.</p>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

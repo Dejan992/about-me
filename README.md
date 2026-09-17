@@ -16,6 +16,12 @@ This repo is a project site. GitHub Pages should deploy from the `main` branch, 
 
 Relative links are used throughout so the site works both at `/about-me/` and on `localhost`.
 
+## Latch
+
+Production marketing page for **Latch** (decision control plane): [dejan992.github.io/about-me/latch/](https://dejan992.github.io/about-me/latch/).
+
+A dedicated public repo (`Dejan992/latch`) is the intended home. This GitHub App token cannot `createRepository`, so the live page ships here until that repo exists. Copy `latch/` to the dedicated repo root when it does.
+
 ## Pages
 
 - `index.html`: home (name-first hero, About, Skills, Projects, Contact). Uses `home.css`.

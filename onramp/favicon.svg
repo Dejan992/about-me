@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Onramp">
+  <rect width="32" height="32" rx="8" fill="#08090f"/>
+  <path d="M6 23h9L24 10" fill="none" stroke="#7aa2ff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="6" cy="23" r="1.7" fill="#64748b"/>
+  <circle cx="15" cy="23" r="1.7" fill="#93c5fd"/>
+  <circle cx="24" cy="10" r="2.7" fill="#7aa2ff"/>
+</svg>

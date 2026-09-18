@@ -16,6 +16,10 @@ This repo is a project site. GitHub Pages should deploy from the `main` branch, 
 
 Relative links are used throughout so the site works both at `/about-me/` and on `localhost`.
 
+## Pathdelta
+
+Production marketing page for **Pathdelta** (week-1 plans from hire vs repo gap): [dejan992.github.io/about-me/pathdelta/](https://dejan992.github.io/about-me/pathdelta/). Demo data is labeled: Alex Chen, Jordan Lee, `acme/payments-api`.
+
 ## Latch
 
 Production marketing page for **Latch** (decision control plane): [dejan992.github.io/about-me/latch/](https://dejan992.github.io/about-me/latch/).
@@ -28,6 +32,8 @@ A dedicated public repo (`Dejan992/latch`) is the intended home. This GitHub App
 - `projects/`: AI infrastructure, Agent Memory, Agent Observability, Platform SDK (contributions). Uses `styles.css`.
 - `writing/`: notes index and stub posts
 - `speaking/`: talk abstracts and engagements (empty until real dates exist)
+- `pathdelta/`: product page for Pathdelta (repo graph, skills delta, week-1 plan demo)
+- `latch/`: production marketing page for Latch
 - `404.html`: GitHub Pages not-found page
 - `sitemap.xml` and `robots.txt`: crawl hints for the Pages URL
 

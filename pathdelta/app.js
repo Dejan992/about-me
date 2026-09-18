@@ -196,7 +196,7 @@
     { id: "shadow", label: "Shadow one charge incident" },
   ];
 
-  const storageKey = "onramp-demo-plan";
+  const storageKey = "pathdelta-demo-plan";
   function loadState() {
     try {
       return JSON.parse(sessionStorage.getItem(storageKey) || "{}");

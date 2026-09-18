@@ -49,6 +49,8 @@
   const replayGraph = document.getElementById("replay-graph");
   if (replayGraph) replayGraph.addEventListener("click", playGraph);
 
+  // Placeholder scores from manager notes + public PRs + optional take-home.
+  // Not from a 10-min quiz.
   const skills = [
     { name: "TypeScript", hire: 91, need: 74 },
     { name: "HTTP APIs", hire: 80, need: 78 },
@@ -56,6 +58,9 @@
     { name: "Idempotency", hire: 18, need: 93 },
     { name: "Incidents", hire: 41, need: 68 },
   ];
+  const heroSkills = skills.filter(function (skill) {
+    return skill.name === "TypeScript" || skill.name === "Payments" || skill.name === "Idempotency";
+  });
 
   function polar(score, index, cx, cy, maxR) {
     const angle = -Math.PI / 2 + index * ((Math.PI * 2) / skills.length);
@@ -113,7 +118,7 @@
         "</text>";
     });
     radar.innerHTML =
-      '<title id="radar-title">Radar of hire scores versus repo needs</title>' +
+      '<title id="radar-title">Radar of hire signals versus repo needs</title>' +
       rings +
       axes +
       '<polygon class="radar-need" points="' +
@@ -125,9 +130,9 @@
       labels;
   }
 
-  const bars = document.getElementById("bars");
-  if (bars) {
-    bars.innerHTML = skills
+  function renderBars(el, list) {
+    if (!el) return;
+    el.innerHTML = list
       .map(function (skill) {
         const gap = skill.hire < skill.need;
         return (
@@ -157,6 +162,16 @@
       .join("");
   }
 
+  const bars = document.getElementById("bars");
+  const heroDelta = document.getElementById("hero-delta");
+  renderBars(bars, skills);
+  renderBars(heroDelta, heroSkills);
+  if (heroDelta) {
+    requestAnimationFrame(function () {
+      heroDelta.classList.add("is-live");
+    });
+  }
+
   function playSkills() {
     if (radar) {
       radar.classList.remove("is-live");
@@ -168,9 +183,14 @@
       void bars.getBoundingClientRect();
       bars.classList.add("is-live");
     }
+    if (heroDelta) {
+      heroDelta.classList.remove("is-live");
+      void heroDelta.getBoundingClientRect();
+      heroDelta.classList.add("is-live");
+    }
   }
 
-  const skillsSection = document.getElementById("skills");
+  const skillsSection = document.getElementById("delta");
   if (skillsSection) {
     const skillsObs = new IntersectionObserver(
       function (entries) {
@@ -262,18 +282,16 @@
   });
   renderShare();
 
-  document.querySelectorAll(".plan-title a").forEach(function (link) {
+  document.querySelectorAll(".plan-title a, .hero-pr a").forEach(function (link) {
     link.addEventListener("click", function () {
       const id = link.getAttribute("href").slice(1);
       const target = document.getElementById(id);
       if (!target) return;
-      document
-        .querySelectorAll(".graph .is-target")
-        .forEach(function (node) {
-          node.classList.remove("is-target");
-        });
+      document.querySelectorAll(".is-target").forEach(function (node) {
+        node.classList.remove("is-target");
+      });
       target.classList.add("is-target");
-      graph && graph.classList.add("is-live");
+      if (graph && graph.contains(target)) graph.classList.add("is-live");
     });
   });
 

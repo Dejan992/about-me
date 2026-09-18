@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pathdelta — Week-1 plans from hire vs repo gap</title>
-  <meta name="description" content="Code-aware eng onboarding — map the repo, measure the person, ship a week-1 plan with real files and PRs.">
+  <title>Pathdelta — the delta between this hire and this repo</title>
+  <meta name="description" content="Pathdelta is the gap between a hire and a specific repo, then a first PR that is real, safe, and scoped. Demo: Alex Chen, Jordan Lee, acme/payments-api.">
   <meta name="author" content="Dejan Rajkovic">
   <link rel="canonical" href="https://dejan992.github.io/about-me/pathdelta/">
-  <meta property="og:title" content="Pathdelta — Week-1 plans from hire vs repo gap">
-  <meta property="og:description" content="Code-aware eng onboarding — map the repo, measure the person, ship a week-1 plan with real files and PRs.">
+  <meta property="og:title" content="Pathdelta — the delta between this hire and this repo">
+  <meta property="og:description" content="Pathdelta is the gap between a hire and a specific repo, then a first PR that is real, safe, and scoped. Demo: Alex Chen, Jordan Lee, acme/payments-api.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://dejan992.github.io/about-me/pathdelta/">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Pathdelta — Week-1 plans from hire vs repo gap">
-  <meta name="twitter:description" content="Code-aware eng onboarding — map the repo, measure the person, ship a week-1 plan with real files and PRs.">
+  <meta name="twitter:title" content="Pathdelta — the delta between this hire and this repo">
+  <meta name="twitter:description" content="Pathdelta is the gap between a hire and a specific repo, then a first PR that is real, safe, and scoped. Demo: Alex Chen, Jordan Lee, acme/payments-api.">
   <meta name="theme-color" content="#08090f">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,7 +26,7 @@
     "@type": "SoftwareApplication",
     "name": "Pathdelta",
     "applicationCategory": "DeveloperApplication",
-    "description": "Code-aware eng onboarding — map the repo, measure the person, ship a week-1 plan with real files and PRs.",
+    "description": "The gap between a hire and a specific repo, then a first PR that is real, safe, and scoped.",
     "url": "https://dejan992.github.io/about-me/pathdelta/",
     "author": {
       "@type": "Person",
@@ -45,7 +45,7 @@
 
   <div class="demo-ribbon" role="note">
     <span class="pill">Demo data</span>
-    <span>Alex Chen · Jordan Lee · <code>acme/payments-api</code></span>
+    <span>Alex Chen · Jordan Lee · <code>acme/payments-api</code> · placeholder, not a live tenant</span>
   </div>
 
   <header class="top">
@@ -64,11 +64,11 @@
         <span></span><span></span>
       </button>
       <nav class="nav" id="site-nav" aria-label="Primary">
-        <a href="#how">How it works</a>
-        <a href="#graph">Repo graph</a>
-        <a href="#skills">Skills delta</a>
+        <a href="#person">Person</a>
+        <a href="#first-pr">First PR</a>
         <a href="#plan">Week 1</a>
         <a href="#share">Share</a>
+        <a href="#graph">Charge path</a>
       </nav>
     </div>
   </header>
@@ -77,31 +77,28 @@
     <header class="hero">
       <div class="wrap hero-grid">
         <div>
-          <p class="kicker">Code-aware eng onboarding</p>
-          <h1>Week-1 plans from the gap between your hire and your repo.</h1>
-          <p class="lede">Map the repo. Measure the person. Ship a week-1 plan with real files and PRs — not a generic checklist.</p>
-          <p class="buyer">Built for eng managers — not HRIS.</p>
+          <p class="kicker">Pathdelta</p>
+          <h1>The delta between this hire and this repo.</h1>
+          <p class="lede">Pathdelta is the gap: who Jordan Lee is, what <code>acme/payments-api</code> needs, and a first PR that closes it. Mapping the repo is supporting work. A 10-minute quiz is not how we read the person.</p>
+          <p class="buyer">Built for eng managers. At larger orgs the same week-1 load often sits with platform or DevEx.</p>
           <div class="hero-actions">
-            <a class="btn" href="#graph">Open the payments-api demo</a>
-            <a class="btn btn-ghost" href="#how">See how it works</a>
+            <a class="btn" href="#person">See Jordan’s delta</a>
+            <a class="btn btn-ghost" href="#first-pr">How PR #842 gets picked</a>
           </div>
         </div>
-        <aside class="hero-card" aria-label="Demo snapshot">
+        <aside class="hero-card" aria-label="Delta snapshot">
           <div class="hero-card-top">
             <span class="dot"></span>
             <span class="dot"></span>
             <span class="dot"></span>
-            <span class="hero-url">pathdelta.app/p/jordan-lee</span>
-            <span class="pill pill-quiet">placeholder</span>
+            <span class="hero-url">demo/jordan-lee</span>
+            <span class="pill pill-quiet">placeholder — not a real domain</span>
           </div>
-          <p class="hero-card-kicker">Week 1 · acme/payments-api</p>
-          <p class="hero-card-title">Jordan Lee</p>
-          <p class="hero-card-meta">Shared by Alex Chen · 10-min skills check in</p>
-          <ul class="mini-plan">
-            <li><span>Read</span> <code>docs/ARCHITECTURE.md</code></li>
-            <li><span>Ship</span> <code>PR #842 add idempotency key</code></li>
-            <li><span>Shadow</span> one charge incident</li>
-          </ul>
+          <p class="hero-card-kicker">Jordan Lee × acme/payments-api</p>
+          <p class="hero-card-title">Hire vs this repo</p>
+          <p class="hero-card-meta">From Alex Chen’s two lines and public PRs. Not a day-1 test.</p>
+          <div class="hero-delta bars" id="hero-delta"></div>
+          <p class="hero-pr">Selected first PR <a href="#pr-842"><code>PR #842 add idempotency key</code></a><span>Output of selection. Not inferred from the graph.</span></p>
         </aside>
       </div>
     </header>
@@ -110,30 +107,198 @@
       <div class="wrap">
         <div class="sec-head">
           <p class="kicker">How it works</p>
-          <h2>Four steps. Then a link Jordan can actually use.</h2>
+          <h2>Read the person. Diff this repo. Pick a first PR.</h2>
         </div>
         <ol class="steps">
           <li>
             <span class="step-num">01</span>
-            <h3>Connect the repo</h3>
-            <p>Pathdelta maps services, entrypoints, and must-reads. Here that is <code>acme/payments-api</code> — <code>api</code>, <code>ledger</code>, <code>risk-check</code>.</p>
+            <h3>Read the person</h3>
+            <p>Alex Chen’s two-line notes, Jordan’s public GitHub / past PRs, and an optional take-home if one exists. A quiz is fallback, not the default.</p>
           </li>
           <li>
             <span class="step-num">02</span>
-            <h3>Hire takes a 10-min skills check</h3>
-            <p>Jordan Lee sits a short quiz against the stack this repo actually uses. Not a generic eng rubric.</p>
+            <h3>Diff against this repo</h3>
+            <p>What <code>acme/payments-api</code> actually needs on the charge path: TypeScript is fine; payments and idempotency are the gap.</p>
           </li>
           <li>
             <span class="step-num">03</span>
-            <h3>Diff person vs repo</h3>
-            <p>Pathdelta writes week 1 from the gap: strong TypeScript, thin payments and idempotency — so the plan is architecture, PR #842, and a charge incident.</p>
+            <h3>Select the first PR</h3>
+            <p>The hard step. Open issues, blast radius, ownership. The graph is not enough. <code>PR #842</code> is the output of that pass.</p>
           </li>
           <li>
             <span class="step-num">04</span>
             <h3>Edit, share, track</h3>
-            <p>Alex Chen edits the checklist, sends a link, and watches progress. No LMS. No HRIS ticket.</p>
+            <p>Alex edits the week-1 checklist, sends a link, and watches progress. No LMS. No HRIS ticket.</p>
           </li>
         </ol>
+      </div>
+    </section>
+
+    <section id="person">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="kicker">Person signal</p>
+          <h2>Who Jordan is, without a day-1 test</h2>
+          <p class="sec-copy">A 10-minute quiz is a weak read of the person. Pathdelta starts from what the manager already knows, what public GitHub already shows, and a take-home only if you have one.</p>
+        </div>
+
+        <div class="signals">
+          <article class="panel signal">
+            <div class="panel-bar">
+              <span>Manager notes</span>
+              <span class="pill">two lines</span>
+            </div>
+            <label class="notes-field">
+              <span>Alex Chen · on Jordan Lee</span>
+              <textarea readonly rows="3">Jordan ships TypeScript services. Has not owned a payments retry path. Start on idempotency, not a service tour.</textarea>
+            </label>
+            <p class="signal-foot">Placeholder manager input. Two lines beat a rubric.</p>
+          </article>
+
+          <article class="panel signal">
+            <div class="panel-bar">
+              <span>Public GitHub / past PRs</span>
+              <span class="pill pill-quiet">placeholder</span>
+            </div>
+            <div class="signal-body">
+              <p class="signal-title"><code>jordan-lee</code> · 14 public PRs</p>
+              <ul class="signal-list">
+                <li><span>Recent</span> retry wrapper on an HTTP client; OpenAPI types</li>
+                <li><span>Missing</span> ledger posting, idempotency keys, payment states</li>
+              </ul>
+            </div>
+            <p class="signal-foot">Prior public work against this repo’s needs. Not a private org scrape in this demo.</p>
+          </article>
+
+          <article class="panel signal">
+            <div class="panel-bar">
+              <span>Interview take-home</span>
+              <span class="pill pill-quiet">optional</span>
+            </div>
+            <div class="signal-body">
+              <p class="signal-title">HTTP + TypeScript service</p>
+              <ul class="signal-list">
+                <li><span>Covered</span> routing, retries, tests</li>
+                <li><span>Not covered</span> payments domain, ledger, idempotency</li>
+              </ul>
+            </div>
+            <p class="signal-foot">Alex attached it. Used when it exists. Not required to get a delta.</p>
+          </article>
+        </div>
+
+        <div class="sec-head sec-head-row delta-head">
+          <div>
+            <p class="kicker">Hire × repo</p>
+            <h2>The delta this week is built from</h2>
+            <p class="sec-copy">Strong TypeScript. Thin payments and idempotency. Scores below are placeholder, derived from the signals above — not from a day-1 quiz.</p>
+          </div>
+          <button class="btn btn-ghost" type="button" id="replay-skills">Replay delta</button>
+        </div>
+
+        <div class="skills-grid" id="delta">
+          <div class="panel radar-panel">
+            <div class="panel-bar">
+              <span>Jordan Lee vs payments-api</span>
+              <span class="legend">
+                <span class="swatch swatch-hire"></span> Hire
+                <span class="swatch swatch-need"></span> Repo need
+              </span>
+            </div>
+            <svg class="radar" id="radar" viewBox="0 0 280 280" role="img" aria-labelledby="radar-title">
+              <title id="radar-title">Radar of hire signals versus repo needs</title>
+            </svg>
+          </div>
+          <div class="panel bars-panel">
+            <div class="panel-bar">
+              <span>Gap vs repo needs</span>
+              <span class="pill pill-quiet">placeholder scores</span>
+            </div>
+            <div class="bars" id="bars"></div>
+          </div>
+        </div>
+        <p class="quiz-note">Optional 10-min stack check can still sit behind these signals. It is not the product, and it is off in this demo.</p>
+      </div>
+    </section>
+
+    <section id="first-pr">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="kicker">The hard product</p>
+          <h2>First-PR selection does not fall out of the graph</h2>
+          <p class="sec-copy">A repo map will show the charge path. It will not tell you which issue Jordan should take. Pathdelta scores open work against the gap, blast radius, and ownership. <code>PR #842</code> is the output of that pass.</p>
+        </div>
+
+        <ul class="criteria">
+          <li>
+            <h3>Real</h3>
+            <p>An open issue on this repo, not a synthetic “add a README.”</p>
+          </li>
+          <li>
+            <h3>Safe</h3>
+            <p>Blast radius you can name. Charge path, not a ledger rewrite.</p>
+          </li>
+          <li>
+            <h3>Scoped</h3>
+            <p>One PR a new hire can land in week 1, with a known owner.</p>
+          </li>
+          <li>
+            <h3>Closes the gap</h3>
+            <p>Jordan is thin on payments and idempotency. The PR has to be that work.</p>
+          </li>
+        </ul>
+
+        <div class="panel pick-panel">
+          <div class="panel-bar">
+            <span>Open issues · acme/payments-api</span>
+            <span class="pill pill-quiet">placeholder issues</span>
+          </div>
+          <ul class="picks">
+            <li class="pick is-skip">
+              <span class="pick-id">#801</span>
+              <span class="pick-title">docs: add charge runbook</span>
+              <span class="pick-verdict">Skip</span>
+              <span class="pick-why">Real docs, but it does not close the payments gap.</span>
+            </li>
+            <li class="pick is-skip">
+              <span class="pick-id">#819</span>
+              <span class="pick-title">chore: bump eslint</span>
+              <span class="pick-verdict">Skip</span>
+              <span class="pick-why">Safe and scoped. Not product work. Not the gap.</span>
+            </li>
+            <li class="pick is-selected" id="pr-842">
+              <span class="pick-id">#842</span>
+              <span class="pick-title">feat: add idempotency key</span>
+              <span class="pick-verdict">Selected</span>
+              <span class="pick-why">Closes the gap. Blast radius: <code>charge.ts</code> → <code>posting.ts</code>. <code>risk-check</code> stays out. Owner: api.</span>
+            </li>
+            <li class="pick is-skip">
+              <span class="pick-id">#901</span>
+              <span class="pick-title">refactor: split ledger posting</span>
+              <span class="pick-verdict">Skip</span>
+              <span class="pick-why">Touches the gap, but blast radius is week-3 work, not week 1.</span>
+            </li>
+          </ul>
+        </div>
+
+        <article class="pr-output">
+          <p class="kicker">Output</p>
+          <h3>PR #842 add idempotency key</h3>
+          <p>Jordan’s first PR is this issue, chosen against the four tests above. The charge-path graph below is how we named blast radius. It is not how #842 appeared.</p>
+          <dl class="pr-facts">
+            <div>
+              <dt>Gap it closes</dt>
+              <dd>Payments + idempotency — the thin slice from Alex’s notes and public PRs</dd>
+            </div>
+            <div>
+              <dt>Blast radius</dt>
+              <dd><code>src/routes/charge.ts</code> → <code>src/ledger/posting.ts</code>. <code>risk-check</code> unchanged.</dd>
+            </div>
+            <div>
+              <dt>Ownership</dt>
+              <dd><code>payments-api</code> / <code>api</code>. Alex is the reviewer.</dd>
+            </div>
+          </dl>
+        </article>
       </div>
     </section>
 
@@ -141,14 +306,14 @@
       <div class="wrap">
         <div class="sec-head sec-head-row">
           <div>
-            <p class="kicker">Repo graph</p>
-            <h2>The charge path, not a folder dump</h2>
-            <p class="sec-copy">Hot path: <code>payments-api</code> → <code>api</code> → <code>ledger</code> → <code>risk-check</code>. Must-reads hang off the nodes Jordan opens first.</p>
+            <p class="kicker">Supporting</p>
+            <h2>Charge path, for blast radius</h2>
+            <p class="sec-copy">Hot path: <code>payments-api</code> → <code>api</code> → <code>ledger</code> → <code>risk-check</code>. Must-reads hang off the nodes Jordan opens. This graph does not pick the first PR.</p>
           </div>
           <button class="btn btn-ghost" type="button" id="replay-graph">Replay graph</button>
         </div>
 
-        <div class="panel graph-panel">
+        <div class="panel graph-panel graph-panel-compact">
           <div class="panel-bar">
             <span>acme/payments-api</span>
             <span class="legend">
@@ -157,9 +322,9 @@
             </span>
           </div>
           <figure class="graph-figure">
-            <svg class="graph" id="repo-graph" viewBox="0 0 720 320" role="img" aria-labelledby="graph-title graph-desc">
-              <title id="graph-title">payments-api service graph</title>
-              <desc id="graph-desc">Hot path from payments-api through api and ledger to risk-check, with must-read files Architecture, charge.ts, and posting.ts.</desc>
+            <svg class="graph" id="repo-graph" viewBox="0 0 720 300" role="img" aria-labelledby="graph-title graph-desc">
+              <title id="graph-title">payments-api charge path</title>
+              <desc id="graph-desc">Hot path from payments-api through api and ledger to risk-check, with must-read files Architecture, charge.ts, and posting.ts. No first PR is attached to the graph.</desc>
               <defs>
                 <linearGradient id="hot" x1="0" x2="1">
                   <stop offset="0%" stop-color="#64748b"/>
@@ -180,7 +345,6 @@
               <path class="edge edge-file edge-4" pathLength="1" d="M110 140 V226" />
               <path class="edge edge-file edge-5" pathLength="1" d="M270 140 V226" />
               <path class="edge edge-file edge-6" pathLength="1" d="M470 140 V226" />
-              <path class="edge edge-file edge-7" pathLength="1" d="M630 140 V226" />
               <path class="hotline" d="M110 118 H270 H470 H630" fill="none"/>
               <g class="packet-wrap">
                 <circle class="packet" r="5" filter="url(#glow)"></circle>
@@ -229,50 +393,9 @@
                   <text text-anchor="middle" dy="5">src/ledger/posting.ts</text>
                 </g>
               </g>
-              <g id="pr-842" transform="translate(630,248)">
-                <g class="pr node-8">
-                  <rect x="-86" y="-22" width="172" height="44" rx="8"/>
-                  <text text-anchor="middle" dy="5">#842 idempotency key</text>
-                </g>
-              </g>
             </svg>
-            <figcaption>Demo graph for <code>acme/payments-api</code>. Edges draw on load. The traveling pulse is the charge flow.</figcaption>
+            <figcaption>Supporting demo graph for <code>acme/payments-api</code>. Edges draw on load. Used to name what #842 touches. It does not select #842.</figcaption>
           </figure>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills">
-      <div class="wrap">
-        <div class="sec-head sec-head-row">
-          <div>
-            <p class="kicker">Skills delta</p>
-            <h2>Jordan’s check against what this repo needs</h2>
-            <p class="sec-copy">Strong TypeScript. Weak payments and idempotency. Week 1 is that delta — not a tour of the org chart.</p>
-          </div>
-          <button class="btn btn-ghost" type="button" id="replay-skills">Replay 10-min check</button>
-        </div>
-
-        <div class="skills-grid">
-          <div class="panel radar-panel">
-            <div class="panel-bar">
-              <span>Jordan Lee · skills check</span>
-              <span class="legend">
-                <span class="swatch swatch-hire"></span> Hire
-                <span class="swatch swatch-need"></span> Repo need
-              </span>
-            </div>
-            <svg class="radar" id="radar" viewBox="0 0 280 280" role="img" aria-labelledby="radar-title">
-              <title id="radar-title">Radar of hire scores versus repo needs</title>
-            </svg>
-          </div>
-          <div class="panel bars-panel">
-            <div class="panel-bar">
-              <span>Gap vs repo needs</span>
-              <span class="pill pill-quiet">quiz results</span>
-            </div>
-            <div class="bars" id="bars"></div>
-          </div>
         </div>
       </div>
     </section>
@@ -282,7 +405,7 @@
         <div class="sec-head">
           <p class="kicker">Week 1</p>
           <h2>A checklist with the real files and the first PR</h2>
-          <p class="sec-copy">Read architecture. Trace the charge path. Ship <code>#842 add idempotency key</code>. Shadow one charge incident. Checkboxes here are live on this demo page.</p>
+          <p class="sec-copy">Read architecture. Trace the charge path. Ship <code>#842 add idempotency key</code> — the PR selected above. Shadow one charge incident. Checkboxes here are live on this demo page.</p>
         </div>
 
         <div class="plan-shell" data-view="jordan">
@@ -309,7 +432,7 @@
                   <span class="plan-body">
                     <span class="plan-day">Tue</span>
                     <span class="plan-title">Trace <a href="#file-charge"><code>src/routes/charge.ts</code></a> → <a href="#file-posting"><code>src/ledger/posting.ts</code></a></span>
-                    <span class="plan-meta">Charge path · must-reads</span>
+                    <span class="plan-meta">Charge path · must-reads · blast radius for #842</span>
                   </span>
                 </label>
               </li>
@@ -319,7 +442,7 @@
                   <span class="plan-body">
                     <span class="plan-day">Thu</span>
                     <span class="plan-title">Ship <a href="#pr-842"><code>PR #842 add idempotency key</code></a></span>
-                    <span class="plan-meta">First PR · closes the payments gap</span>
+                    <span class="plan-meta">Selected first PR · closes the payments gap</span>
                   </span>
                 </label>
               </li>
@@ -350,9 +473,10 @@
         <div class="browser" id="share-preview">
           <div class="browser-bar">
             <span class="traffic"><i></i><i></i><i></i></span>
-            <div class="browser-url" title="Demo URL — placeholder">
-              <span>pathdelta.app/p/acme-payments-api/jordan-lee</span>
+            <div class="browser-url" title="Placeholder path — not a real domain. This demo lives at dejan992.github.io/about-me/pathdelta/">
+              <span>demo/jordan-lee</span>
             </div>
+            <span class="pill pill-quiet">placeholder — not a real domain</span>
             <button class="btn btn-tiny" type="button" id="copy-link">Copy link</button>
           </div>
           <div class="browser-body">
@@ -360,7 +484,7 @@
               <div>
                 <p class="share-by">Shared by Alex Chen</p>
                 <h3>Jordan Lee · payments-api · week 1</h3>
-                <p class="share-note">Placeholder tenant. Progress is this page’s checklist, not a live org.</p>
+                <p class="share-note">Placeholder tenant. Progress is this page’s checklist, not a live org. Live URL: dejan992.github.io/about-me/pathdelta/</p>
               </div>
               <p class="share-stat" id="share-stat">0 of 4 done</p>
             </div>
@@ -374,8 +498,8 @@
     <section id="cta">
       <div class="wrap cta-box">
         <p class="kicker">For eng managers</p>
-        <h2>Run Pathdelta on the repo your hire will actually touch</h2>
-        <p>This page is a working demo with labeled placeholder data — Alex Chen, Jordan Lee, <code>acme/payments-api</code>. If you want the same graph-and-delta flow on your team, write.</p>
+        <h2>Run Pathdelta on the hire and the repo they will actually touch</h2>
+        <p>This page is a working demo with labeled placeholder data — Alex Chen, Jordan Lee, <code>acme/payments-api</code>. If the person↔repo delta and first-PR problem is yours, write.</p>
         <a class="btn" href="mailto:dan.rajkovic@icloud.com?subject=Pathdelta%20demo">Email about Pathdelta</a>
       </div>
     </section>

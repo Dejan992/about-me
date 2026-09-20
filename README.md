@@ -18,7 +18,7 @@ Relative links are used throughout so the site works both at `/about-me/` and on
 
 ## Pathdelta
 
-Production marketing page for **Pathdelta** (custom academy from role × person × team): [dejan992.github.io/about-me/pathdelta/](https://dejan992.github.io/about-me/pathdelta/). Demo data is labeled: Alex Chen, Jordan Lee, acme payments team.
+Production marketing page for **Pathdelta** (custom academy from role × person × team; ramp ~90 days → ~3): [dejan992.github.io/about-me/pathdelta/](https://dejan992.github.io/about-me/pathdelta/). Demo data is labeled: Alex Chen, Jordan Lee, acme payments team.
 
 ## Latch
 

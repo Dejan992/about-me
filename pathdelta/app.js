@@ -49,6 +49,135 @@
   const replayTeam = document.getElementById("replay-team");
   if (replayTeam) replayTeam.addEventListener("click", playGraph);
 
+  const DAY_RATE = 800;
+  const USUAL_DAYS = 90;
+  const TARGET_DAYS = 3;
+  const DAYS_CUT = USUAL_DAYS - TARGET_DAYS;
+
+  function money(days) {
+    return days * DAY_RATE;
+  }
+
+  function formatUSD(n) {
+    return "$" + Math.round(n).toLocaleString("en-US");
+  }
+
+  function easeOut(t) {
+    return 1 - Math.pow(1 - t, 3);
+  }
+
+  function countTo(el, end, duration, format) {
+    if (!el) return;
+    if (reduce) {
+      el.textContent = format(end);
+      return;
+    }
+    const start = performance.now();
+    function frame(now) {
+      const t = Math.min(1, (now - start) / duration);
+      el.textContent = format(Math.round(end * easeOut(t)));
+      if (t < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+
+  const bill = document.getElementById("bill-paper");
+  const meter = document.getElementById("money-meter");
+  const meterCash = document.getElementById("meter-cash");
+  const meterDays = document.getElementById("meter-days");
+  const scrub = document.getElementById("scrub-days");
+  const scrubDay = document.getElementById("scrub-day");
+  const scrubCash = document.getElementById("scrub-cash");
+
+  function setScrub(days) {
+    const n = Math.max(TARGET_DAYS, Math.min(USUAL_DAYS, Number(days)));
+    if (scrubDay) scrubDay.textContent = String(n);
+    if (scrubCash) {
+      scrubCash.textContent = "~" + formatUSD(money(n));
+      scrubCash.classList.toggle("is-saved", n <= TARGET_DAYS + 2);
+    }
+    if (scrub) {
+      scrub.setAttribute("aria-valuenow", String(n));
+      scrub.value = String(n);
+    }
+  }
+
+  function playMeter() {
+    if (bill) bill.classList.add("is-live");
+    if (meter) meter.classList.add("is-live");
+    if (reduce) {
+      if (meterCash) meterCash.textContent = formatUSD(money(DAYS_CUT));
+      if (meterDays) meterDays.textContent = String(DAYS_CUT);
+      return;
+    }
+    if (meterCash) meterCash.textContent = formatUSD(0);
+    if (meterDays) meterDays.textContent = "0";
+    countTo(meterCash, money(DAYS_CUT), 1400, formatUSD);
+    countTo(meterDays, DAYS_CUT, 1400, function (n) {
+      return String(n);
+    });
+  }
+
+  if (meter) {
+    if (reduce) {
+      playMeter();
+    } else {
+      const meterObs = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              playMeter();
+              meterObs.disconnect();
+            }
+          });
+        },
+        { threshold: 0.35 }
+      );
+      meterObs.observe(meter);
+    }
+  }
+
+  if (scrub) {
+    setScrub(TARGET_DAYS);
+    let scrubUser = false;
+    let scrubRaf = 0;
+
+    function onScrubInput() {
+      scrubUser = true;
+      if (scrubRaf) cancelAnimationFrame(scrubRaf);
+      setScrub(scrub.value);
+    }
+    scrub.addEventListener("input", onScrubInput);
+    scrub.addEventListener("change", onScrubInput);
+
+    if (!reduce) {
+      const scrubber = document.getElementById("scrubber");
+      const scrubObs = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting || scrubUser) return;
+            const start = performance.now();
+            const duration = 1600;
+            function frame(now) {
+              if (scrubUser) return;
+              const t = Math.min(1, (now - start) / duration);
+              const days = Math.round(
+                USUAL_DAYS - (USUAL_DAYS - TARGET_DAYS) * easeOut(t)
+              );
+              setScrub(days);
+              if (t < 1) scrubRaf = requestAnimationFrame(frame);
+            }
+            setScrub(USUAL_DAYS);
+            scrubRaf = requestAnimationFrame(frame);
+            scrubObs.disconnect();
+          });
+        },
+        { threshold: 0.4 }
+      );
+      if (scrubber) scrubObs.observe(scrubber);
+    }
+  }
+
   const compress = document.getElementById("compress");
   function playCompress() {
     document.querySelectorAll(".compress").forEach(function (el) {
@@ -297,7 +426,7 @@
   });
   renderShare();
 
-  document.querySelectorAll(".item-title a, .hero-days a").forEach(function (link) {
+  document.querySelectorAll(".item-title a").forEach(function (link) {
     link.addEventListener("click", function () {
       const href = link.getAttribute("href");
       if (!href || href.charAt(0) !== "#") return;

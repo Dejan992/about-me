@@ -18,7 +18,7 @@ Relative links are used throughout so the site works both at `/about-me/` and on
 
 ## Pathdelta
 
-Production marketing page for **Pathdelta** (custom academy from role × person × team; ramp ~90 days → ~3): [dejan992.github.io/about-me/pathdelta/](https://dejan992.github.io/about-me/pathdelta/). Demo data is labeled: Alex Chen, Jordan Lee, acme payments team.
+Production marketing page for **Pathdelta** (private academy from the team’s real work, matched to the hire; target useful in ~3 days vs ~90). Salary math is a labeled estimate (~$800/day loaded). Live: [dejan992.github.io/about-me/pathdelta/](https://dejan992.github.io/about-me/pathdelta/). Demo data: Alex Chen, Jordan Lee, acme payments team.
 
 ## Latch
 
@@ -32,7 +32,7 @@ A dedicated public repo (`Dejan992/latch`) is the intended home. This GitHub App
 - `projects/`: AI infrastructure, Agent Memory, Agent Observability, Platform SDK (contributions). Uses `styles.css`.
 - `writing/`: notes index and stub posts
 - `speaking/`: talk abstracts and engagements (empty until real dates exist)
-- `pathdelta/`: product page for Pathdelta (role × person × team academy, 3-day curriculum demo)
+- `pathdelta/`: product page for Pathdelta (elevator-pitch bill + role × person × team academy demo)
 - `latch/`: production marketing page for Latch
 - `404.html`: GitHub Pages not-found page
 - `sitemap.xml` and `robots.txt`: crawl hints for the Pages URL

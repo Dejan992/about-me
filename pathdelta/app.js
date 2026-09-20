@@ -22,13 +22,12 @@
     });
   }
 
-  const graph = document.getElementById("repo-graph");
+  const graph = document.getElementById("team-graph");
   function playGraph() {
     if (!graph) return;
     graph.classList.remove("is-live");
     void graph.getBoundingClientRect();
     graph.classList.add("is-live");
-    if (reduce) graph.classList.add("is-live");
   }
 
   if (graph) {
@@ -44,23 +43,45 @@
       { threshold: 0.25 }
     );
     observer.observe(graph);
+    if (reduce) graph.classList.add("is-live");
   }
 
-  const replayGraph = document.getElementById("replay-graph");
-  if (replayGraph) replayGraph.addEventListener("click", playGraph);
+  const replayTeam = document.getElementById("replay-team");
+  if (replayTeam) replayTeam.addEventListener("click", playGraph);
 
-  // Placeholder scores from manager notes + public PRs + optional take-home.
-  // Not from a 10-min quiz.
+  const compress = document.getElementById("compress");
+  function playCompress() {
+    document.querySelectorAll(".compress").forEach(function (el) {
+      el.classList.remove("is-live");
+      void el.getBoundingClientRect();
+      el.classList.add("is-live");
+    });
+  }
+  playCompress();
+  if (compress) {
+    const compressObs = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            playCompress();
+            compressObs.disconnect();
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+    compressObs.observe(compress);
+  }
+
+  // Placeholder scores from resume + quiz vs the Payments backend role.
   const skills = [
-    { name: "TypeScript", hire: 91, need: 74 },
-    { name: "HTTP APIs", hire: 80, need: 78 },
-    { name: "Payments", hire: 26, need: 90 },
-    { name: "Idempotency", hire: 18, need: 93 },
-    { name: "Incidents", hire: 41, need: 68 },
+    { name: "TypeScript", hire: 91, need: 72 },
+    { name: "HTTP APIs", hire: 80, need: 76 },
+    { name: "Payments", hire: 24, need: 92 },
+    { name: "Idempotency", hire: 18, need: 90 },
+    { name: "Ownership", hire: 16, need: 78 },
+    { name: "Incidents", hire: 41, need: 70 }
   ];
-  const heroSkills = skills.filter(function (skill) {
-    return skill.name === "TypeScript" || skill.name === "Payments" || skill.name === "Idempotency";
-  });
 
   function polar(score, index, cx, cy, maxR) {
     const angle = -Math.PI / 2 + index * ((Math.PI * 2) / skills.length);
@@ -118,7 +139,7 @@
         "</text>";
     });
     radar.innerHTML =
-      '<title id="radar-title">Radar of hire signals versus repo needs</title>' +
+      '<title id="radar-title">Radar of hire signals versus role needs</title>' +
       rings +
       axes +
       '<polygon class="radar-need" points="' +
@@ -163,14 +184,7 @@
   }
 
   const bars = document.getElementById("bars");
-  const heroDelta = document.getElementById("hero-delta");
   renderBars(bars, skills);
-  renderBars(heroDelta, heroSkills);
-  if (heroDelta) {
-    requestAnimationFrame(function () {
-      heroDelta.classList.add("is-live");
-    });
-  }
 
   function playSkills() {
     if (radar) {
@@ -182,11 +196,6 @@
       bars.classList.remove("is-live");
       void bars.getBoundingClientRect();
       bars.classList.add("is-live");
-    }
-    if (heroDelta) {
-      heroDelta.classList.remove("is-live");
-      void heroDelta.getBoundingClientRect();
-      heroDelta.classList.add("is-live");
     }
   }
 
@@ -204,19 +213,28 @@
       { threshold: 0.2 }
     );
     skillsObs.observe(skillsSection);
+    if (reduce) playSkills();
   }
 
   const replaySkills = document.getElementById("replay-skills");
   if (replaySkills) replaySkills.addEventListener("click", playSkills);
 
   const tasks = [
-    { id: "arch", label: "Read docs/ARCHITECTURE.md" },
-    { id: "path", label: "Trace charge.ts → posting.ts" },
-    { id: "pr", label: "Ship PR #842 add idempotency key" },
-    { id: "shadow", label: "Shadow one charge incident" },
+    { id: "d1-arch", label: "Day 1 · Read docs/ARCHITECTURE.md" },
+    { id: "d1-owners", label: "Day 1 · CODEOWNERS: Alex, Priya, Sam" },
+    { id: "d1-epic", label: "Day 1 · Skim PAY-1200 Charge reliability" },
+    { id: "d1-slack", label: "Day 1 · Join #payments-eng (Slack next)" },
+    { id: "d2-trace", label: "Day 2 · Trace charge.ts → posting.ts" },
+    { id: "d2-ticket", label: "Day 2 · Read PAY-1184 retry storms" },
+    { id: "d2-incident", label: "Day 2 · #charge-incidents notes" },
+    { id: "d2-quiz", label: "Day 2 · Idempotency key vs request id" },
+    { id: "d3-pair", label: "Day 3 · PAY-1242 / PR #842 (one ticket)" },
+    { id: "d3-review", label: "Day 3 · posting.ts with Priya · PAY-1108" },
+    { id: "d3-post", label: "Day 3 · Post in #payments-eng" },
+    { id: "d3-11", label: "Day 3 · Alex 1:1 on remaining ledger gap" }
   ];
 
-  const storageKey = "pathdelta-demo-plan";
+  const storageKey = "pathdelta-demo-academy";
   function loadState() {
     try {
       return JSON.parse(sessionStorage.getItem(storageKey) || "{}");
@@ -230,7 +248,7 @@
   }
 
   const checkboxes = Array.prototype.slice.call(
-    document.querySelectorAll('#plan-list input[type="checkbox"]')
+    document.querySelectorAll('.day-list input[type="checkbox"]')
   );
   const state = loadState();
   checkboxes.forEach(function (box) {
@@ -239,18 +257,15 @@
 
   const shareList = document.getElementById("share-list");
   const shareStat = document.getElementById("share-stat");
-  const planProgress = document.getElementById("plan-progress");
-  const planFill = document.getElementById("plan-fill");
+  const total = tasks.length;
 
   function renderShare() {
     const done = checkboxes.filter(function (box) {
       return box.checked;
     }).length;
-    if (planProgress) planProgress.textContent = done + " / 4";
-    if (planFill) planFill.style.width = (done / 4) * 100 + "%";
     if (shareStat) {
       shareStat.textContent =
-        done === 4 ? "Week 1 complete" : done + " of 4 done";
+        done === total ? "Academy complete" : done + " of " + total + " done";
     }
     if (shareList) {
       shareList.innerHTML = tasks
@@ -282,10 +297,11 @@
   });
   renderShare();
 
-  document.querySelectorAll(".plan-title a, .hero-pr a").forEach(function (link) {
+  document.querySelectorAll(".item-title a, .hero-days a").forEach(function (link) {
     link.addEventListener("click", function () {
-      const id = link.getAttribute("href").slice(1);
-      const target = document.getElementById(id);
+      const href = link.getAttribute("href");
+      if (!href || href.charAt(0) !== "#") return;
+      const target = document.getElementById(href.slice(1));
       if (!target) return;
       document.querySelectorAll(".is-target").forEach(function (node) {
         node.classList.remove("is-target");

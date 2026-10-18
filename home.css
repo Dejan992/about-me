@@ -695,6 +695,20 @@ img {
     color: var(--primary);
 }
 
+.consulting-link {
+    margin: 4px 0 0 60px;
+    font-size: 0.875rem;
+}
+
+.consulting-link a {
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.consulting-link a:hover {
+    color: var(--primary);
+}
+
 .contact-form {
     background: var(--background);
     padding: 40px;
